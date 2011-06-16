@@ -1,0 +1,9 @@
+.emacs-backups
+auto-save-list
+*.elc
+tramp
+elpa
+auto-install
+anything-c-adaptive-history
+.backups
+*~
