@@ -71,3 +71,4 @@
 
 (require 'mic-paren)
 (paren-activate)
+(require 'nyan-mode)
