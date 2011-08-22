@@ -72,3 +72,6 @@
 (require 'mic-paren)
 (paren-activate)
 (require 'nyan-mode)
+(add-hook 'text-mode-hook (lambda () (nyan-mode t)))
+(require 'fixme-mode)
+(add-hook 'text-mode-hook (lambda () (fixme-mode t)))
