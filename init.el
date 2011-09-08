@@ -14,6 +14,7 @@
 ; never use tabs
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
+;;(setq whitespace-trailing 'underline)
 
 ;; unicode
 (prefer-coding-system 'utf-8)
