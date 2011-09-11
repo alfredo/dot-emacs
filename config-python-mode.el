@@ -12,9 +12,15 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pyflakes-init)))
 (add-hook 'python-mode-hook 'flymake-mode)
-
 (load-library "flymake-cursor")
 
+(custom-set-faces
+ '(flymake-errline ((((class color)) (:background "LightYellow"))))
+ '(flymake-warnline ((((class color)) (:background "LightBlue2" :underline "Yellow")))))
+
+;; (custom-set-faces
+;;  '(flymake-errline ((((class color)) (:background "LightYellow" :underline "OrangeRed"))))
+;;  '(flymake-warnline ((((class color)) (:background "LightBlue2" :underline "Yellow")))))
 
 ; (autoload 'python-mode "python-mode.el" "Python mode." t)
 ; (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
