@@ -119,7 +119,7 @@ will use the 256 degraded color mode."
                            :box (:line-width 1 :color ,base02)))))
          (region ((t (:background ,base02))))
          (secondary-selection ((t (:background ,base02))))
-         (trailing-whitespace ((t (:foreground ,red :inverse-video t))))
+         (trailing-whitespace ((t (:foreground ,"#6c71c4" :inverse-video t))))
          (vertical-border ((t (:foreground ,base0))))
          ;; comint
          (comint-highlight-prompt ((t (:foreground ,blue))))

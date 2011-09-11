@@ -15,7 +15,7 @@
 (load-library "flymake-cursor")
 
 (custom-set-faces
- '(flymake-errline ((((class color)) (:background "LightYellow"))))
+ '(flymake-errline ((((class color)) (:background "#ffffd7"))))
  '(flymake-warnline ((((class color)) (:background "LightBlue2" :underline "Yellow")))))
 
 ;; (custom-set-faces
