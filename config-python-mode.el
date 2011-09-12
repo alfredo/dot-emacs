@@ -28,7 +28,7 @@
 
 (custom-set-faces
  '(flymake-errline ((((class color)) (:background "#ffffd7"))))
- '(flymake-warnline ((((class color)) (:background "LightBlue2" :underline "Yellow")))))
+ '(flymake-warnline ((((class color)) (:background "#0a2832")))))
 
 (defun django-insert-trans-block (from to &optional buffer)
  (interactive "*r")
