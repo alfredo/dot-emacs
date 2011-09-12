@@ -1,50 +1,34 @@
 ;; python config
 (require 'python)
 
+;; (when (load "flymake" t)
+;;   (defun flymake-pyflakes-init ()
+;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
+;;                        'flymake-create-temp-inplace))
+;;            (local-file (file-relative-name
+;;                         temp-file
+;;                         (file-name-directory buffer-file-name))))
+;;       (list "pyflakes" (list local-file))))
+;;   (add-to-list 'flymake-allowed-file-name-masks
+;;                '("\\.py\\'" flymake-pyflakes-init)))
+
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
-           (local-file (file-relative-name
-                        temp-file
-                        (file-name-directory buffer-file-name))))
-      (list "pyflakes" (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-pyflakes-init)))
+               'flymake-create-temp-inplace))
+       (local-file (file-relative-name
+            temp-file
+            (file-name-directory buffer-file-name))))
+      (list "pycheckers"  (list local-file))))
+   (add-to-list 'flymake-allowed-file-name-masks
+             '("\\.py\\'" flymake-pyflakes-init)))
+
 (add-hook 'python-mode-hook 'flymake-mode)
 (load-library "flymake-cursor")
 
 (custom-set-faces
  '(flymake-errline ((((class color)) (:background "#ffffd7"))))
  '(flymake-warnline ((((class color)) (:background "LightBlue2" :underline "Yellow")))))
-
-;; (custom-set-faces
-;;  '(flymake-errline ((((class color)) (:background "LightYellow" :underline "OrangeRed"))))
-;;  '(flymake-warnline ((((class color)) (:background "LightBlue2" :underline "Yellow")))))
-
-; (autoload 'python-mode "python-mode.el" "Python mode." t)
-; (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
-
-;(setq python-python-command "ipython")
-                                        ;(setq py-python-command-args '( "-colors" "Linux"))
-;(require 'ipython)
-
-
-; bind RET to py-newline-and-indent
-;(add-hook 'python-mode-hook '(lambda ()
-;     (define-key python-mode-map "\C-m" 'newline-and-indent)))
-
-;(setq ropemacs-enable-shortcuts nil)
-;(setq ropemacs-local-prefix "C-c C-p")
-;(require 'pymacs)
-;(pymacs-load "ropemacs" "rope-")
-;(setq ropemacs-enable-autoimport 't)
-
-;; virtualenv loading
-;;(add-hook 'python-mode-hook '(lambda () (require 'virtualenv)))
-
-;; (load "django-mode")
-;; (load "django-html-mode")
 
 (defun django-insert-trans-block (from to &optional buffer)
  (interactive "*r")
