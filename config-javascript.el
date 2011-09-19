@@ -1,5 +1,27 @@
 ;; ;; javascript config
 
+
+(autoload #'espresso-mode "espresso" "Start espresso-mode" t)
+(add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . espresso-mode))
+
+(when (load "flymake" t)
+  (defun flymake-closure-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+		       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+      (list "closure.sh" (list local-file))))
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.js\\'" flymake-closure-init)))
+
+(add-hook 'espresso-mode-hook
+	  (lambda () (flymake-mode t)))
+
+
+;; http://closure-compiler.googlecode.com/files/compiler-latest.zip
+
 ;; (autoload 'js2-mode "js2" nil t)
 ;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
