@@ -1,17 +1,6 @@
 ;; python config
 (require 'python)
 
-;; (when (load "flymake" t)
-;;   (defun flymake-pyflakes-init ()
-;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;;                        'flymake-create-temp-inplace))
-;;            (local-file (file-relative-name
-;;                         temp-file
-;;                         (file-name-directory buffer-file-name))))
-;;       (list "pyflakes" (list local-file))))
-;;   (add-to-list 'flymake-allowed-file-name-masks
-;;                '("\\.py\\'" flymake-pyflakes-init)))
-
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
@@ -64,3 +53,6 @@
           (local-set-key "\C-c\C-t" 'django-insert-trans-block)
           (setq indent-tabs-mode nil)
           ))
+
+(add-hook 'text-mode-hook 'turn-on-flyspell)
+(add-hook 'python-mode-hook 'flyspell-prog-mode)
