@@ -26,7 +26,7 @@ Find a replace on certain files::
 Tail file on eshell
 -------------------
 
-eshell
+eshell::
 
 cat myfile.txt > (switch-to-buffer "*my-new-buffer*")
 
