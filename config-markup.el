@@ -1,8 +1,8 @@
 ;; mark up config
-(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
+(setq magic-mode-alist nil)
+;; ;; disable autofill
 (setq auto-mode-alist (cons '("\\.gsp$" . html-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.html$" . html-mode) auto-mode-alist))
-;; disable autofill
 (add-hook 'html-mode-hook 'turn-off-auto-fill)
 
 
