@@ -75,3 +75,6 @@
 (add-hook 'text-mode-hook (lambda () (nyan-mode t)))
 (require 'fixme-mode)
 (add-hook 'text-mode-hook (lambda () (fixme-mode t)))
+
+(autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
+(add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
