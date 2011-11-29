@@ -73,6 +73,7 @@
 (paren-activate)
 (require 'nyan-mode)
 (add-hook 'text-mode-hook (lambda () (nyan-mode t)))
+(add-hook 'python-mode-hook (lambda () (nyan-mode t)))
 (require 'fixme-mode)
 (add-hook 'text-mode-hook (lambda () (fixme-mode t)))
 
@@ -82,3 +83,6 @@
 (require 'magit)
 ;; vagrantvile is like ruby
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
+
+;; ring bell
+(setq ring-bell-function 'ignore)

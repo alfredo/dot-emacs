@@ -1,11 +1,24 @@
 ;; python config
-;;(require 'python)
+;; (require 'python)
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+(when (and window-system (eq system-type 'darwin))
+  ;; When started from Emacs.app or similar, ensure $PATH
+  ;; is the same the user would see in Terminal.app
+  (set-exec-path-from-shell-PATH))
+
 (autoload 'python-mode "python-mode" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 
-;;(setq pyflymakeexec "/usr/local/bin/pyflakespep8.py")
-(setq pyflymakeexec "/usr/local/bin/pycheckers")
+(setq pyflymakeexec "/usr/local/bin/pyflakespep8.py")
+;; (setq pyflymakeexec "/usr/local/bin/pycheckers")
 
 ;; Pyflakes for python
 (when (load "flymake" t)
@@ -21,6 +34,10 @@
 
 (add-hook 'python-mode-hook 'flymake-mode)
 (load-library "flymake-cursor")
+
+
+;; Use this to debug flymake
+;; (setq flymake-log-level 3)
 
 (custom-set-faces
  '(flymake-errline ((((class color)) (:background "#ffffd7"))))
