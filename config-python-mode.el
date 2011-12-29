@@ -21,10 +21,13 @@
 ;; (setq pyflymakeexec "/usr/local/bin/pycheckers")
 
 ;; Pyflakes for python
+(defun flymake-create-temp-in-system-tempdir (filename prefix)
+  (make-temp-file (or prefix "flymake")))
+
 (when (load "flymake" t)
   (defun flymake-pychecker-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-inplace))
+                       'flymake-create-temp-in-system-tempdir))
            (local-file (file-relative-name
                         temp-file
                         (file-name-directory buffer-file-name))))
@@ -34,6 +37,9 @@
 
 (add-hook 'python-mode-hook 'flymake-mode)
 (load-library "flymake-cursor")
+
+;; Nope, I want my copies in the system temp dir.
+(setq flymake-run-in-place nil)
 
 
 ;; Use this to debug flymake
@@ -78,5 +84,5 @@
           (setq indent-tabs-mode nil)
           ))
 
-(add-hook 'text-mode-hook 'turn-on-flyspell)
-(add-hook 'python-mode-hook 'flyspell-prog-mode)
+;; (add-hook 'text-mode-hook 'turn-on-flyspell)
+;; (add-hook 'python-mode-hook 'flyspell-prog-mode)
