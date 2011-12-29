@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.DateTimeField
+# key: datetime
+# --
+$1 = models.DateTimeField(${2:blank=True, null=True})

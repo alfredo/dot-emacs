@@ -1,0 +1,7 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+#name :<form method="..." id="..." action="..."></form>
+# key: form
+# --
+<form method="${1:post}" id="form-$2-id" action="$3">
+$0
+</form>

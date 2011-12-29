@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% csrf_token%}
+# key: csrf
+# --
+{% csrf_token %}

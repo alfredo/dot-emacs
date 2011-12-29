@@ -1,0 +1,7 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% if %}...{% endif %}
+# key: if
+# --
+{% if $1 %}
+   $0
+{% endif %}

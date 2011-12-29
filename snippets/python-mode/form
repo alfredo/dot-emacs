@@ -1,0 +1,7 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: forms.Form
+# key: form
+# --
+class ${1:Name}Form(forms.Form):
+    """$2"""
+    $0

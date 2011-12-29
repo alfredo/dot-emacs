@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.FileField
+# key: file
+# --
+${1:attachment} = models.FileField(upload_to=${2:$1}, blank=True)

@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% comment %}...{% endcomment %}
+# key: comment
+# --
+{% comment %}$0{% endcomment %}

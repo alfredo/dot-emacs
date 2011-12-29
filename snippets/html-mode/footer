@@ -1,0 +1,7 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: <footer>...</footer>
+# key: footer
+# --
+<footer>
+  $0
+</footer>

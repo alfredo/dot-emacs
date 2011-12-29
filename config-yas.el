@@ -1,5 +1,11 @@
 ;; yas config
-(require 'yasnippet) ;; not yasnippet-bundle
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/plugins/snippets")
-(setq yas/prompt-functions '(yas/x-prompt))
+(add-to-list 'load-path
+             "~/.emacs.d/plugins/yasnippet")
+
+(require 'yasnippet)
+(setq yas/snippet-dirs "~/.emacs.d/snippets")
+
+(require 'dropdown-list)
+(setq yas/prompt-functions '(yas/dropdown-prompt))
+
+(yas/global-mode 1)

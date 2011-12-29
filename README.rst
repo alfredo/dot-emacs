@@ -1,8 +1,8 @@
 =====================
-Configuration for aquaemacs
+Emacs Configuration
 =====================
 
-I've created this because my emacs configuration is not really portable to aquaemacs.
+This is the configuration that I use on my machines
 
 
 ====

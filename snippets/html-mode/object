@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {{ object. }}
+# key: object
+# --
+{{ object.$1 }}$0

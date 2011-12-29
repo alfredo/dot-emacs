@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.ForeignKey
+# key: fk
+# --
+${1:name} = models.ForeignKey($2)

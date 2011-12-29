@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: <label />
+# key: label
+# --
+<label for="$1">$0</label>

@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.BooleanField
+# key: boolean
+# --
+$1 = models.BooleanField(${2:default=True})

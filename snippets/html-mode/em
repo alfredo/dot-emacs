@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: <em>...</em>
+# key: em
+# --
+<em>$1</em>$0

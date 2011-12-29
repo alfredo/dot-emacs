@@ -1,0 +1,6 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% extends "" %}
+# key: extends
+# --
+{% extends "${1:base.html}" %}
+$0

@@ -1,3 +1,0 @@
-{% for ${1:object} in ${2:object_list} %}
-    $3
-{% endfor%}

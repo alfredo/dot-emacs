@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% block %}...{% endblock %}
+# key: block
+# --
+{% block $1 %}$0{% endblock ${2:$1} %}

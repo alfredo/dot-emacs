@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: <button />
+# key: button
+# --
+<button type="${1:submit}">$0</button>

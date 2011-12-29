@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.EmailField
+# key: email
+# --
+$1 = models.EmailField($2)

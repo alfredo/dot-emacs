@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% trans %}
+# key: trans
+# --
+{% trans "$1" %}$0

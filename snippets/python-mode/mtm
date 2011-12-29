@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.ManyToMany
+# key: mtm
+# --
+${1:name} = models.ManyToManyField($2)

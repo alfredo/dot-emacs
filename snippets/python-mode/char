@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.CharField
+# key: char
+# --
+$1 = models.CharField(${2:blank=True, }max_length=${3:255})
