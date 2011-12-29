@@ -1,1 +1,1 @@
-${1:FIELDNAME} = models.ImageField(upload_to="${2:/dir/path}", blank=True)
+${1:FIELDNAME} = models.ImageField(upload_to="${2:$1}", blank=True)
