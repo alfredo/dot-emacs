@@ -4,3 +4,6 @@
 [submodule "plugins/coffee-mode"]
 	path = plugins/coffee-mode
 	url = https://github.com/defunkt/coffee-mode.git
+[submodule "plugins/expand-region"]
+	path = plugins/expand-region
+	url = https://github.com/magnars/expand-region.el.git

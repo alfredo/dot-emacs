@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.CharField
+# key: char
+# --
+$1 = models.TextField(${2:blank=True})

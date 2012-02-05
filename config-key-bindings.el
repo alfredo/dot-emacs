@@ -17,6 +17,7 @@
 (global-set-key (kbd "C-c t") 'delete-trailing-whitespace)
 
 (global-set-key (kbd "C-c o") 'occur)
+(global-set-key (kbd "C-c g") 'goto-line)
 
 (defun duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
@@ -84,3 +85,11 @@ there's a region, all lines that region covers will be duplicated."
 (defun close-all-buffers ()
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
+
+
+(require 'iy-go-to-char)
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define-global "jk" 'dabbrev-expand)
+(key-chord-define-global "fg" 'iy-go-to-char)
+(key-chord-define-global "df" 'iy-go-to-char-backward)
