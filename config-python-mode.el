@@ -46,7 +46,7 @@
 ;; (setq flymake-log-level 3)
 
 (custom-set-faces
- '(flymake-errline ((((class color)) (:background "#ffffd7"))))
+ '(flymake-errline ((((class color)) (:background "#6c71c4" :foreground "#ffffff"))))
  '(flymake-warnline ((((class color)) (:background "#0a2832")))))
 
 (defun django-insert-trans-block (from to &optional buffer)

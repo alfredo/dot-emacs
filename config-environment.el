@@ -16,7 +16,7 @@
   (interactive)
   (let ((home (expand-file-name (getenv "HOME"))))
     (find-file
-     (ido-completing-read "Recentf open: "
+     (ido-completing-read "Recent open: "
                           (mapcar (lambda (path)
                                     (replace-regexp-in-string home "~" path))
                                   recentf-list)
@@ -27,7 +27,7 @@
 (desktop-save-mode 1)
 (setq desktop-buffers-not-to-save
         (concat "\\("
-                "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
+                "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS\\|.DS_Store"
                 "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb";
                 "\\)$"))
 (add-to-list 'desktop-modes-not-to-save 'dired-mode)
@@ -71,9 +71,11 @@
 
 (require 'mic-paren)
 (paren-activate)
+
 (require 'nyan-mode)
 (add-hook 'text-mode-hook (lambda () (nyan-mode t)))
 (add-hook 'python-mode-hook (lambda () (nyan-mode t)))
+
 (require 'fixme-mode)
 (add-hook 'text-mode-hook (lambda () (fixme-mode t)))
 
@@ -117,3 +119,7 @@
                              (frame-char-height)))))))
 
 (set-frame-size-according-to-resolution)
+
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#002b36")  ;; Emacs 22 Only
+;(set-face-background 'highlight "#330")  ;; Emacs 21 Only

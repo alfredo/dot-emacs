@@ -10,6 +10,6 @@
 
 (ansi-color-for-comint-mode-on)
 (setq inhibit-startup-message t)
-(set-default 'indicate-empty-lines nil)
+;; (set-default 'indicate-empty-lines nil)
 ;; No blinking
-(blink-cursor-mode -1)
+;; (blink-cursor-mode -1)

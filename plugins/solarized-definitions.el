@@ -104,7 +104,7 @@ will use the 256 degraded color mode."
          (header-line ((t (:foreground ,base0 :background ,base2))))
          (highlight ((t (:background ,base02))))
          (hl-line ((t (:background ,base02))))
-         (isearch ((t (:foreground ,yellow :inverse-video t))))
+         (isearch ((t (:foreground ,base01 :inverse-video t))))
          (lazy-highlight ((t (:background ,base2 :foreground ,base00))))
          (link ((t (:foreground ,violet :underline ,underline))))
          (link-visited ((t (:foreground ,magenta :underline ,underline))))
@@ -117,7 +117,7 @@ will use the 256 degraded color mode."
          (mode-line-inactive
           ((t (:foreground ,base0  :background ,base02
                            :box (:line-width 1 :color ,base02)))))
-         (region ((t (:background ,base02))))
+         (region ((t (:background ,base3))))
          (secondary-selection ((t (:background ,base02))))
          (trailing-whitespace ((t (:foreground ,"#6c71c4" :inverse-video t))))
          (vertical-border ((t (:foreground ,base0))))
