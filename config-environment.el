@@ -123,3 +123,11 @@
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#002b36")  ;; Emacs 22 Only
 ;(set-face-background 'highlight "#330")  ;; Emacs 21 Only
+
+;; smex
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
