@@ -59,9 +59,7 @@ there's a region, all lines that region covers will be duplicated."
 
 (global-set-key (kbd "C-c r") 'rename-file-and-buffer)
 
-;; alias to save the pinky
-(global-set-key "\M-o" 'find-file)
-(global-set-key "\M-s" 'save-buffer)
+;; Alias to save the pinky
 (global-set-key [(meta down)] 'end-of-buffer)
 (global-set-key [(meta up)] 'beginning-of-buffer)
 (global-set-key [(meta right)] 'end-of-line)

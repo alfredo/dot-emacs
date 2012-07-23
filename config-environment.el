@@ -4,25 +4,6 @@
 (require 'saveplace)
 (setq-default save-place t)
 
-;; Show recent files
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-saved-items 500)
-(setq recentf-max-menu-items 60)
-(global-set-key [(meta f12)] 'recentf-open-files)
-;; ido to select from recent files
-(defun xsteve-ido-choose-from-recentf ()
-  "Use ido to select a recently opened file from the `recentf-list'"
-  (interactive)
-  (let ((home (expand-file-name (getenv "HOME"))))
-    (find-file
-     (ido-completing-read "Recent open: "
-                          (mapcar (lambda (path)
-                                    (replace-regexp-in-string home "~" path))
-                                  recentf-list)
-                          nil t))))
-(global-set-key [(meta f11)] 'xsteve-ido-choose-from-recentf)
-
 ;; desktop mode
 (desktop-save-mode 1)
 (setq desktop-buffers-not-to-save
@@ -52,8 +33,6 @@
                 tags-file-name
                 register-alist)))
 
-(require 'pastebin)
-
 ;; back up files
 (setq version-control t)
 (setq delete-old-versions 1)
@@ -66,8 +45,6 @@
 ;; backup directory
 (setq backup-directory-alist
       '(("." . "~/.emacs.d/.backups")))
-
-(require 'psvn)
 
 (require 'mic-paren)
 (paren-activate)
@@ -83,7 +60,7 @@
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 (require 'magit)
-;; vagrantvile is like ruby
+;; vagrantfile is like ruby
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
 ;; ring bell
@@ -131,3 +108,8 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time

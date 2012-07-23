@@ -1,5 +1,5 @@
 ;;  toolbars removal
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
@@ -49,3 +49,6 @@
 (load-library "config-shell")
 ;; custom setup
 (load-library "config-custom")
+(put 'ido-exit-minibuffer 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'scroll-left 'disabled nil)
