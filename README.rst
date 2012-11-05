@@ -40,3 +40,10 @@ Hides all the unselected regions of a given file and shows them again::
 
 
 M-x count-lines-region or M-=
+
+Requirements
+------------
+
+flake8, pyflakes or pylint.
+jslint
+jsonlint

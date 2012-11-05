@@ -1,12 +1,6 @@
 ;; python config
 (require 'python)
 
-;; Nope, I want my copies in the system temp dir.
-(setq flymake-run-in-place nil)
-
-;; Use this to debug flymake
-;; (setq flymake-log-level 3)
-
 (custom-set-faces
  '(flymake-errline ((((class color)) (:background "#6c71c4" :foreground "#ffffff"))))
  '(flymake-warnline ((((class color)) (:background "#0a2832")))))
@@ -46,5 +40,3 @@
           (setq indent-tabs-mode nil)
           ))
 
-;; (add-hook 'text-mode-hook 'turn-on-flyspell)
-;; (add-hook 'python-mode-hook 'flyspell-prog-mode)

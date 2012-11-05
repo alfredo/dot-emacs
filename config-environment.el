@@ -1,3 +1,5 @@
+
+
 ;; emacs environment config
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -160,3 +162,5 @@ horizontal line of `page-break-string-char' characters."
 
 ;; Enable flymake for all files
 (add-hook 'find-file-hook 'flycheck-mode)
+
+(exec-path-from-shell-initialize)
