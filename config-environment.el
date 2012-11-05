@@ -91,17 +91,15 @@
     ;; from the screen height (for panels, menubars and
     ;; whatnot), then divide by the height of a char to
     ;; get the height we want
-    (add-to-list 'default-frame-alist 
+    (add-to-list 'default-frame-alist
          (cons 'height (/ (- (x-display-pixel-height) 80)
                              (frame-char-height)))))))
 
 (set-frame-size-according-to-resolution)
 
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#002b36")  ;; Emacs 22 Only
-;(set-face-background 'highlight "#330")  ;; Emacs 21 Only
 
-;; smex
+;; smex. List the most used emacs commands.
 (require 'smex)
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
@@ -113,3 +111,52 @@
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
+(put 'upcase-region 'disabled nil) ;;  Change to uppercase text
+
+(setq font-lock-global-modes '(not rst-mode))
+
+(defvar page-break-face 'bold)
+(defvar page-break-string-char ?-)
+
+(defun page-break-display-table (window)
+  "Create a display-table that displays page-breaks prettily."
+  (let ((table (or (copy-sequence (window-display-table window))
+                   (make-display-table))))
+    (aset table ?\^L
+          (let ((face-offset (lsh (face-id page-break-face) 19)))
+            (vconcat (mapcar (lambda (c) (+ face-offset c)) 
+           (make-string (1- (window-width window))
+            page-break-string-char)))))
+    table))
+
+
+(defun page-break-mode-hook-function  ()
+  "Function called for updating display table"
+  (mapcar (lambda (window) 
+      (set-window-display-table window 
+              (page-break-display-table window)))
+    (window-list nil 'no-minibuffer)))
+
+(define-minor-mode page-break-mode
+  "Toggle Page Break mode.
+
+In Page Break mode, page breaks (^L characters) are displayed as a
+horizontal line of `page-break-string-char' characters."
+  :global t 
+  :lighter " Pgbrk" 
+  (if page-break-mode
+      (add-hook 'window-configuration-change-hook 
+    'page-break-mode-hook-function )
+    (remove-hook 'window-configuration-change-hook 
+     'page-break-mode-hook-function)))
+
+(defun turn-on-page-break-mode ()
+  (page-break-mode 1))
+
+(defun turn-off-page-break-mode ()
+  (page-break-mode -1))
+
+(turn-on-page-break-mode)
+
+;; Enable flymake for all files
+(add-hook 'find-file-hook 'flycheck-mode)

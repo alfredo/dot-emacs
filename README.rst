@@ -2,10 +2,9 @@
 Emacs Configuration
 =====================
 
-This is the configuration that I use on my machines
+This is the configuration I use. It is heavily oriented for web development and python.
 
 
-====
 Tips
 ====
 

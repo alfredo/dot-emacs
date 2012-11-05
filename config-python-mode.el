@@ -1,46 +1,8 @@
 ;; python config
-;; (require 'python)
-(defun set-exec-path-from-shell-PATH ()
-  (let ((path-from-shell (replace-regexp-in-string
-                          "[ \t\n]*$"
-                          ""
-                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
-    (setenv "PATH" path-from-shell)
-    (setq exec-path (split-string path-from-shell path-separator))))
-
-(when (and window-system (eq system-type 'darwin))
-  ;; When started from Emacs.app or similar, ensure $PATH
-  ;; is the same the user would see in Terminal.app
-  (set-exec-path-from-shell-PATH))
-
-(autoload 'python-mode "python-mode" "Python Mode." t)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-
-(setq pyflymakeexec "/usr/local/bin/pyflakespep8.py")
-;; (setq pyflymakeexec "/usr/local/bin/pycheckers")
-
-;; Pyflakes for python
-(defun flymake-create-temp-in-system-tempdir (filename prefix)
-  (make-temp-file (or prefix "flymake")))
-
-(when (load "flymake" t)
-  (defun flymake-pychecker-init ()
-    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                       'flymake-create-temp-in-system-tempdir))
-           (local-file (file-relative-name
-                        temp-file
-                        (file-name-directory buffer-file-name))))
-      (list pyflymakeexec (list local-file))))
-  (add-to-list 'flymake-allowed-file-name-masks
-               '("\\.py\\'" flymake-pychecker-init)))
-
-(add-hook 'python-mode-hook 'flymake-mode)
-(load-library "flymake-cursor")
+(require 'python)
 
 ;; Nope, I want my copies in the system temp dir.
 (setq flymake-run-in-place nil)
-
 
 ;; Use this to debug flymake
 ;; (setq flymake-log-level 3)

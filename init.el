@@ -1,5 +1,4 @@
 ;;  toolbars removal
-;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
@@ -10,11 +9,9 @@
 ;; make selected area visible
 (setq transient-mark-mode t)
 
-
 ; never use tabs
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
-;;(setq whitespace-trailing 'underline)
 
 ;; unicode
 (prefer-coding-system 'utf-8)
@@ -27,9 +24,11 @@
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/plugins")
 
+;; package install
+(load-library "config-package")
 ;; environment setup
 (load-library "config-environment")
-;; ; key bindings
+;; key bindings
 (load-library "config-key-bindings")
 ;; ido config
 (load-library "config-ido")
@@ -49,6 +48,3 @@
 (load-library "config-shell")
 ;; custom setup
 (load-library "config-custom")
-(put 'ido-exit-minibuffer 'disabled nil)
-(put 'upcase-region 'disabled nil)
-(put 'scroll-left 'disabled nil)
