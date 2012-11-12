@@ -1,16 +1,16 @@
-;;(require 'color-theme-zenburn)
-;;(color-theme-zenburn)
+;;(color-theme-tomorrow-night-eighties)
 
-;;(require 'color-theme-desert)
-;;(color-theme-desert)
+(color-theme-sanityinc-solarized-dark)
 
-(require 'color-theme-tomorrow )
-(color-theme-tomorrow-night-eighties)
-;; (color-theme-solarized-dark)
-;; (setq solarized-contrast "high")
+;; (load-theme 'cyberpunk t)
 
-;; (ansi-color-for-comint-mode-on)
-(setq inhibit-startup-message t)
-;; (set-default 'indicate-empty-lines nil)
-;; No blinking
-;; (blink-cursor-mode -1)
+(custom-set-faces
+ '(flymake-errline ((((class color)) (:background "#6c71c4" :foreground "#ffffff"))))
+ '(flymake-warnline ((((class color)) (:background "#0a2832")))))
+
+(add-to-list 'load-path (concat user-emacs-directory
+                         (convert-standard-filename "plugins/nyan-mode/")))
+
+ (require 'nyan-mode)
+ (add-hook 'text-mode-hook (lambda () (nyan-mode t)))
+ (add-hook 'python-mode-hook (lambda () (nyan-mode t)))

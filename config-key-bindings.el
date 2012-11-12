@@ -2,10 +2,10 @@
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
 ;; Use regex searches by default.
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "\C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
+;; (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+;; (global-set-key (kbd "\C-r") 'isearch-backward-regexp)
+;; (global-set-key (kbd "C-M-s") 'isearch-forward)
+;; (global-set-key (kbd "C-M-r") 'isearch-backward)
 
 ;; Jump to a definition in the current file.
 (global-set-key (kbd "C-c i") 'ido-imenu)
@@ -65,29 +65,28 @@ there's a region, all lines that region covers will be duplicated."
 (global-set-key [(meta right)] 'end-of-line)
 (global-set-key [(meta left)] 'beginning-of-line)
 
-(defun fb ()
-  "fix buffer"
+(defun fix-buffer ()
+  "Remove trailing whitespace, reindent and tab the buffer"
   (interactive)
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 
-(defun fixfile ()
-  "Fix a mac file list"
+(defun clean-and-ut8fy ()
+  "Remove empty lines and change encoding to utf8"
   (interactive)
   (set-buffer-file-coding-system 'utf-8-unix t)
   (flush-lines "^$")
   )
 
-
-(defun close-all-buffers ()
-  (interactive)
-  (mapc 'kill-buffer (buffer-list)))
-
-
+;; Shortucts by pressing two keys at the same time
 (require 'iy-go-to-char)
 (require 'key-chord)
 (key-chord-mode 1)
+;; Expand function.
 (key-chord-define-global "jk" 'dabbrev-expand)
-(key-chord-define-global "fg" 'iy-go-to-char)
-(key-chord-define-global "df" 'iy-go-to-char-backward)
+;; Go to next given character.
+(key-chord-define-global "df" 'iy-go-to-char)
+(key-chord-define-global "ds" 'iy-go-to-char-backward)
+;; Go to line number.
+(key-chord-define-global "cv" 'goto-line)

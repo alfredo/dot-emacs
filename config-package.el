@@ -1,23 +1,26 @@
 (require 'package)
 (require 'melpa)
 
+(setq package-list '(exec-path-from-shell flycheck flymake-easy flymake-cursor python dropdown-list flyspell
+	expand-region smex yasnippet color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cyberpunk-theme
+	php-mode sass-mode js2-mode flymake-jslint coffee-mode bash-completion mic-paren puppet-mode magit
+	auto-complete ctags fixmee flex-isearch gist goto-chg logito ido-ubiquitous bm))
+
+;; TODO: missing rainbow-mode
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+; activate all the packages (in particular autoloads)
 (package-initialize)
 
 (setq url-http-attempt-keepalives nil)
 
-(mapc
- (lambda (package)
-   (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
-           (package-install package))))
- '(exec-path-from-shell flycheck flymake-easy flymake-python-pyflakes flymake-css flymake-cursor 
- 	flymake-php flymake-ruby flymake-sass flymake-shell flyspell-lazy full-ack dired+ 
- 	magit rainbow-mode flex-isearch python yasnippet multi-web-mode bookmark+ 
- 	browse-kill-ring color-theme-solarized csv-mode ctags ctags-update
- 	dropdown-list duplicate-thing expand-region gist goto-chg
- 	groovy-mode hippie-namespace ido-ubiquitous markdown-mode mark-multiple
- 	markdown-mode+ mic-paren mode-line-debug molokai-theme monky multifiles
- 	multiple-cursors prelude-python prelude-ruby puppet-mode redo+ restclient
- 	revive sass-mode shell-here smart-mode-line smex flyspell))
+; fetch the list of packages available 
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (when (not (package-installed-p package))
+    (package-install package)))

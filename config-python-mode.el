@@ -1,10 +1,3 @@
-;; python config
-(require 'python)
-
-(custom-set-faces
- '(flymake-errline ((((class color)) (:background "#6c71c4" :foreground "#ffffff"))))
- '(flymake-warnline ((((class color)) (:background "#0a2832")))))
-
 (defun django-insert-trans-block (from to &optional buffer)
  (interactive "*r")
  (save-excursion
@@ -28,15 +21,3 @@
      (goto-char (point-max))
      (insert "\" %}")
      (point-max))))
-
-(add-hook 'sgml-mode-hook
-        (lambda ()
-          (local-set-key "\C-c\C-g" 'django-insert-trans)
-          (setq indent-tabs-mode nil)
-          ))
-(add-hook 'sgml-mode-hook
-        (lambda ()
-          (local-set-key "\C-c\C-t" 'django-insert-trans-block)
-          (setq indent-tabs-mode nil)
-          ))
-
