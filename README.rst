@@ -17,9 +17,6 @@ Tips
 These are some tips I've found useful. I write them down so I can remember them.
 
 
-Find and replace
-================
-
 Find a replace on certain files::
 
     - M-x find-name-dired: you will be prompted for a root directory and a filename pattern.
@@ -28,27 +25,22 @@ Find a replace on certain files::
     - Proceed as with query-replace-regexp: SPACE to replace and move to next match, n to skip a match, etc.
 
 
-Tail file on eshell
-===================
+Tail file on eshell::
 
     cat myfile.txt > (switch-to-buffer "*my-new-buffer*")
 
 
-Narrow mode
-===========
-
-Hides all the unselected regions of a given file and shows them again.
+Narrow mode. Hides all the unselected regions of a given file and shows them again::
 
     - Hide: C-x n n
     - Show: C-x n w
 
 
-Count lines in a region.
+Count lines in a region::
 
     M-x count-lines-region or M-=
 
-Enabling JS validation
-======================
+Enabling JS validation::
 
     M-x flymake-jslint-load
 
