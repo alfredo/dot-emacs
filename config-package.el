@@ -1,11 +1,10 @@
 (require 'package)
 (require 'melpa)
 
-(setq package-list '(exec-path-from-shell flycheck flymake-easy flymake-cursor python dropdown-list flyspell
-	expand-region smex yasnippet color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cyberpunk-theme
-	php-mode sass-mode js2-mode flymake-jslint coffee-mode bash-completion mic-paren puppet-mode magit
-	auto-complete ctags fixmee flex-isearch gist goto-chg logito ido-ubiquitous bm browse-kill-ring groovy-mode
-	iedit python-magic redo+ restclient))
+(setq package-list '(exec-path-from-shell smex yasnippet dropdown-list color-theme-sanityinc-tomorrow
+	color-theme-sanityinc-solarized iy-go-to-char key-chord python flymake-cursor flymake-python-pyflakes 
+	bm restclient flymake-jslint flymake-sass flymake-ruby puppet-mode s revive nyan-mode magit mic-paren
+	rainbow-mode expand-region))
 
 ;; TODO: missing rainbow-mode
 
@@ -20,7 +19,7 @@
 ; fetch the list of packages available 
 (when (not package-archive-contents)
   (package-refresh-contents))
-
+ 
 ; install the missing packages
 (dolist (package package-list)
   (when (not (package-installed-p package))

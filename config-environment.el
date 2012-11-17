@@ -15,8 +15,8 @@
 
 ;; Expand regions in semantical units
 ;; TODO: Use a more accessible key combination
-(require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
+;; (require 'expand-region)
+;; (global-set-key (kbd "C-@") 'er/expand-region)
 
 ;; Do not show scratch at the begining
 (setq inhibit-startup-message t)
@@ -49,9 +49,12 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
 ;; Provide access to the previous M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+;; Only use y / n as a valid answer
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (defun close-all-buffers ()
   (interactive)

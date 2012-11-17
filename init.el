@@ -17,6 +17,6 @@
 ;; themes
 (load-library "config-color-themes")
 ;; python mode
-(load-library "config-python-mode")
+(load-library "config-python")
 ;; custom setup
 (load-library "config-custom")

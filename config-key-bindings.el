@@ -90,3 +90,11 @@ there's a region, all lines that region covers will be duplicated."
 (key-chord-define-global "ds" 'iy-go-to-char-backward)
 ;; Go to line number.
 (key-chord-define-global "cv" 'goto-line)
+;; bookmarks
+(key-chord-define-global "kl" 'bm-toggle)
+(key-chord-define-global "l;" 'bm-next)
+
+;; expand in semantical units
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+

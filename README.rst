@@ -4,6 +4,12 @@ Emacs Configuration
 
 This is the configuration I use. It is heavily oriented for web development and python.
 
+Requirements
+------------
+
+alfredo/slash-bin files
+jslint
+
 
 Tips
 ====
@@ -41,9 +47,12 @@ Hides all the unselected regions of a given file and shows them again::
 
 M-x count-lines-region or M-=
 
-Requirements
-------------
+Enabling JS validation
+-----------------------
 
-flake8, pyflakes or pylint.
-jslint
-jsonlint
+M-x flymake-jslint-load
+
+Edit strings utils
+------------------
+
+https://github.com/magnars/s.el
