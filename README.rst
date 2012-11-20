@@ -45,9 +45,9 @@ Enabling JS validation::
     M-x flymake-jslint-load
 
 
-Edit strings utils
-==================
+Useful documentation
+====================
 
-Documentation.
+- String manipulation https://github.com/magnars/s.el
 
-https://github.com/magnars/s.el
+- eshell http://www.masteringemacs.org/articles/2010/12/13/complete-guide-mastering-eshell/

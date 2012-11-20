@@ -73,3 +73,8 @@
 
 ;; browse the kill ring
 (browse-kill-ring-default-keybindings)
+
+;; show current function
+(require 'which-func)
+(add-to-list 'which-func-modes '(org-mode python-mode))
+(which-func-mode 1)
