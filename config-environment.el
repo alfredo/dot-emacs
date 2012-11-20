@@ -78,3 +78,6 @@
 (require 'which-func)
 (add-to-list 'which-func-modes '(org-mode python-mode))
 (which-func-mode 1)
+
+;; Treat camel-case words as single words
+(subword-mode 1)

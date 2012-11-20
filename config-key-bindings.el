@@ -97,4 +97,3 @@ there's a region, all lines that region covers will be duplicated."
 ;; expand in semantical units
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
-
