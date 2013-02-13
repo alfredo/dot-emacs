@@ -81,3 +81,12 @@
 
 ;; Treat camel-case words as single words
 (subword-mode 1)
+
+;; Enable puppet mode on .pp files
+(setq auto-mode-alist (cons '("\\.pp$" . puppet-mode) auto-mode-alist))
+
+;; only use spaces as tab
+(setq default-indent-tabs-mode nil)
+;; if a mode uses tabs only indent by 4. I am looking at you go.
+(setq default-tab-width 4)
+
