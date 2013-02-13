@@ -8,3 +8,5 @@ anything-c-adaptive-history
 .backups
 *~
 saved-places
+var/
+*.dat
