@@ -86,10 +86,10 @@ there's a region, all lines that region covers will be duplicated."
 ;; Expand function.
 (key-chord-define-global "jk" 'dabbrev-expand)
 ;; Go to next given character.
-(key-chord-define-global "df" 'iy-go-to-char)
-(key-chord-define-global "ds" 'iy-go-to-char-backward)
+;; (key-chord-define-global "df" 'iy-go-to-char)
+;; (key-chord-define-global "ds" 'iy-go-to-char-backward)
 ;; Go to line number.
-(key-chord-define-global "cv" 'goto-line)
+;; (key-chord-define-global "cv" 'goto-line)
 ;; bookmarks
 (key-chord-define-global "kl" 'bm-toggle)
 (key-chord-define-global "l;" 'bm-next)
