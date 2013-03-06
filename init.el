@@ -18,5 +18,7 @@
 (load-library "config-color-themes")
 ;; python mode
 (load-library "config-python")
+;; css setup
+(load-library "config-css")
 ;; custom setup
 (load-library "config-custom")

@@ -89,4 +89,3 @@
 (setq default-indent-tabs-mode nil)
 ;; if a mode uses tabs only indent by 4. I am looking at you go.
 (setq default-tab-width 4)
-
