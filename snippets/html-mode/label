@@ -2,4 +2,4 @@
 # name: <label />
 # key: label
 # --
-<label for="$1">$0</label>
+<label for="$1">$2</label>$0

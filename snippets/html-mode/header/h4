@@ -1,5 +1,6 @@
-# contributor: Jimmy Wu <frozenthrone88@gmail.com>
+# contributor: Alfredo Aguirre madewithbyt.es
 # name: <h4>...</h4>
 # key: h4
 # --
 <h4>$1</h4>
+$0

@@ -1,5 +1,5 @@
-# contributor: Jimmy Wu <frozenthrone88@gmail.com>
+# contributor: Alfredo Aguirre madewithbyt.es
 # name: <meta name="..." content="..." />
 # key: meta
 # --
-<meta name="${1:generator}" content="${2:content}" />
+<meta name="$1" content="$2" />

@@ -2,4 +2,4 @@
 # name: <input ... />
 # key: input
 # --
-<input type="$1" name="$2" value="$3" />
+<input type="$1" name="$2" />$0

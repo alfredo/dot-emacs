@@ -2,4 +2,4 @@
 # name: <a href="mailto:...@...">...</a>
 # key: mailto
 # --
-<a href="mailto:$1@$2">$0</a>
+<a href="mailto:$1">$2</a>$0

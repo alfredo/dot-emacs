@@ -2,4 +2,4 @@
 # name: <img src="..."  alt="..." />
 # key: img
 # --
-<img src="$1" alt="$2" />
+<img src="$1" alt="$2" $3/>$0

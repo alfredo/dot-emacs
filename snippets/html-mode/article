@@ -3,5 +3,6 @@
 # key: article
 # --
 <article>
-$0
+    $1
 </article>
+$0
