@@ -11,3 +11,6 @@ saved-places
 var/
 *.dat
 autosaves
+eshell/history
+eshell/lastdir
+url/cookies
