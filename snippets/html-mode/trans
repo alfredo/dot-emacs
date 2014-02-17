@@ -2,4 +2,4 @@
 # name: {% trans %}
 # key: trans
 # --
-{% trans "$1" %}$0
+{% trans %}$1{% endtrans %}$0

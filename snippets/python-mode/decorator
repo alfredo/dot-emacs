@@ -1,0 +1,12 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: decorator
+# key: decorator
+# --
+
+def $1(function):
+    """$2"""
+    @functools.wraps(function)
+    def wrapper(request, *args, **kwargs):
+        $0
+        return function(request, *args, **kwargs)
+    return wrapper

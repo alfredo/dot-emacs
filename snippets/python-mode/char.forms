@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: forms.CharField
+# key: char
+# --
+${1:name} = forms.CharField(${2:max_length=255})

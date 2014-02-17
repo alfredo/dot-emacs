@@ -1,5 +1,5 @@
 # contributor: Alfredo Aguirre madewithbyt.es
-# name: <p>...</p>
-# key: p
+# name: {# ... #}
+# key: comment
 # --
-<p>$0</p>
+{# $0 #}

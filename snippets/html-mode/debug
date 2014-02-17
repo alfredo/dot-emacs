@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% debug %}
+# key: debug
+# --
+<pre>{% filter force_escape %}{% debug %}{% endfilter %}</pre>

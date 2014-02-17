@@ -1,5 +1,5 @@
 # contributor: Alfredo Aguirre madewithbyt.es
-# name: <p>...</p>
-# key: p
+# name: ok_
+# key: ok
 # --
-<p>$0</p>
+ok_($1)$0

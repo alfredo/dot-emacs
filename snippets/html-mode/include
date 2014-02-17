@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% include %}
+# key: include
+# --
+{% include "$1" %}

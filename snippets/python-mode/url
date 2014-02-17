@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.URLField
+# key: url
+# --
+$1 = models.URLField(${2:blank=True})

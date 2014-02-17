@@ -1,5 +1,5 @@
 # contributor: Alfredo Aguirre madewithbyt.es
-# name: <p>...</p>
-# key: p
+# name: eq_
+# key: eq
 # --
-<p>$0</p>
+eq_($1, $2)$0

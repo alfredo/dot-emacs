@@ -1,0 +1,7 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% blocktrans %}{% endblocktrans %}
+# key: blocktrans
+# --
+{% blocktrans $1 %}
+$0
+{% endblocktrans %}

@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: models.SlugField
+# key: slug
+# --
+$1 = models.SlugField(max_length=${2:255})

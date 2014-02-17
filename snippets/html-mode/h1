@@ -1,5 +1,5 @@
 # contributor: Alfredo Aguirre madewithbyt.es
-# name: <p>...</p>
-# key: p
+# name: <h1>...</h1>
+# key: h1
 # --
-<p>$0</p>
+<h1>$0</h1>

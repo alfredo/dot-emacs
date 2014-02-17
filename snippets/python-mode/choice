@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: forms.ChoiceField
+# key: choice
+# --
+$1 = forms.ChoiceField(choices=${2})
