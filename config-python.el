@@ -14,13 +14,17 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pychecker-init)))
 
-(add-hook 'python-mode-hook 'flymake-mode)
+;; (add-hook 'python-mode-hook 'flymake-mode)
 (load-library "flymake-cursor")
 
 (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 
-(defun flymake-create-temp-in-system-tempdir (filename prefix)
-  (make-temp-file (or prefix "flymake")))
+(defun flymake-python-pyflakes-warn-regex (executable)
+  "Return a regex which identifies warnings output by EXECUTABLE."
+  (if (string-match-p "pyflakes" executable)
+      "\\(.*Warning.*\\|^redefinition\\|.*unused.*\\|used$\\)"
+    "^\\([WFCN]\\|E[0-7]\\)"))
+
 
 (defun django-insert-trans-block (from to &optional buffer)
  (interactive "*r")
@@ -45,3 +49,15 @@
      (goto-char (point-max))
      (insert "\" %}")
      (point-max))))
+
+(defun jinja2-insert-trans (from to &optional buffer)
+  (interactive "*r")
+  (save-excursion
+    (save-restriction
+      (narrow-to-region from to)
+      (goto-char from)
+      (iso-iso2sgml from to)
+      (insert "{{ _(\"")
+      (goto-char (point-max))
+      (insert "\") }}")
+      (point-max))))
