@@ -51,3 +51,14 @@ Useful documentation
 - String manipulation https://github.com/magnars/s.el
 
 - eshell http://www.masteringemacs.org/articles/2010/12/13/complete-guide-mastering-eshell/
+
+
+Update melpa packages
+---------------------
+
+Refresh the content of the packages: ``package-refresh-contents``.
+Show all the available packages:``package-list-packages``.
+Mark all upgradable packages with:``U``.
+Execute:``x``.
+
+Please note that once the packages are downloaded they are compiled to ``elc`` files. This makes a bit more complicated to override any pre-existing behaviour. Removing these files usually does the trick.
