@@ -134,3 +134,12 @@ Don't mess with special buffers."
 (set-face-attribute 'default nil :font source_code_pro)
 
 (ns-set-resource nil "ApplePressAndHoldEnabled" "NO")
+
+(defun narrow-to-region-indirect (start end)
+  "Restrict editing in this buffer to the current region, indirectly."
+  (interactive "r")
+  (deactivate-mark)
+  (let ((buf (clone-indirect-buffer nil nil)))
+    (with-current-buffer buf
+      (narrow-to-region start end))
+      (switch-to-buffer buf)))
