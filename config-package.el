@@ -6,7 +6,7 @@
     iy-go-to-char key-chord python flymake-cursor flymake-python-pyflakes
 	bm restclient flymake-jslint flymake-sass flymake-ruby puppet-mode s
     revive nyan-mode magit mic-paren rainbow-mode expand-region browse-kill-ring
-    gist go-mode sass-mode scss-mode yaml-mode fic-mode))
+    gist go-mode sass-mode scss-mode yaml-mode fic-mode coffee-mode))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
