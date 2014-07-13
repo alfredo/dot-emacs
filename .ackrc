@@ -1,0 +1,4 @@
+--ignore-dir=elpa
+--ignore-dir=autosaves
+--ignore-dir=backups
+--ignore-dir=auto-save-list
