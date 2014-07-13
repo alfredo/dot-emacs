@@ -35,27 +35,9 @@
   (let ((fill-column (point-max)))
     (fill-paragraph nil)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Get IP Address
-;; http://emacs-fu.blogspot.com/2009/05/getting-your-ip-address.html
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun get-ip-address (&optional dev)
-  "get the IP-address for device DEV (default: eth0)"
-  (interactive)  
-  (let ((dev (if dev dev "eth0")))
-    (format-network-address (car (network-interface-info dev)) t)))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
 ;; Reload current file with position saved
 ;; http://www.thekidder.net/2008/10/21/emacs-reload-file/
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (defun reload-file ()
   (interactive)
   (let ((curr-scroll (window-vscroll)))
@@ -63,23 +45,19 @@
     (set-window-vscroll nil curr-scroll)
     (message "Reloaded file")))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
+
 ;; Edit files as root
 ;; http://nflath.com/2009/08/tramp/
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (defun sudo-edit (&optional arg)
   (interactive "p")
   (if arg
       (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
- 
+
 (defun sudo-edit-current-file ()
   (interactive)
   (let ((pos (point)))
-    (find-alternate-file 
+    (find-alternate-file
      (concat "/sudo:root@localhost:" (buffer-file-name (current-buffer))))
     (goto-char pos)))
 
