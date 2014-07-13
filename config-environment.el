@@ -133,3 +133,11 @@ Don't mess with special buffers."
     (with-current-buffer buf
       (narrow-to-region start end))
       (switch-to-buffer buf)))
+
+;; Undo tweaks:
+(require 'undo-tree)
+(global-undo-tree-mode 1)
+(eval-after-load "diminish"
+  '(progn
+     (eval-after-load "undo-tree"
+       '(diminish 'undo-tree-mode "↺"))))
