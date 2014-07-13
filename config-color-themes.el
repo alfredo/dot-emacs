@@ -7,10 +7,6 @@
 ;; (add-hook 'text-mode-hook (lambda () (nyan-mode t)))
 ;; (add-hook 'python-mode-hook (lambda () (nyan-mode t)))
 
-(require 'powerline)
-(powerline-default)
-
-
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (yas-minor-mode . " λ")
