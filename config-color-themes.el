@@ -9,7 +9,7 @@
 
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
-    (yas-minor-mode . " λ")
+    (yas-minor-mode . " ✂")
     (eldoc-mode . "")
     (abbrev-mode . "")
     ;; Major modes
