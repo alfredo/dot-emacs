@@ -60,6 +60,7 @@
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
 
+;; Beautify json input:
 (defun beautify-json ()
   (interactive)
   (let ((b (if mark-active (min (point) (mark)) (point-min)))
@@ -141,3 +142,5 @@ Don't mess with special buffers."
   '(progn
      (eval-after-load "undo-tree"
        '(diminish 'undo-tree-mode "↺"))))
+
+(require 'diminish)

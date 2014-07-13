@@ -7,7 +7,7 @@
 	bm restclient flymake-jslint flymake-sass flymake-ruby puppet-mode s
     revive nyan-mode magit mic-paren rainbow-mode expand-region browse-kill-ring
     gist go-mode sass-mode scss-mode yaml-mode fic-mode coffee-mode
-    moz-controller undo-tree goto-last-change))
+    moz-controller undo-tree goto-last-change diminish))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
