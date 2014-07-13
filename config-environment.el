@@ -144,3 +144,15 @@ Don't mess with special buffers."
        '(diminish 'undo-tree-mode "↺"))))
 
 (require 'diminish)
+
+;; show whitespace
+(require 'whitespace)
+(setq whitespace-style '(trailing lines tab-mark))
+(setq whitespace-line-column 80)
+(global-whitespace-mode 1)
+(eval-after-load "diminish"
+  '(progn
+     (eval-after-load "whitespace"
+       '(diminish 'global-whitespace-mode "ᗣ"))
+     (eval-after-load "whitespace"
+       '(diminish 'whitespace-mode ""))))
