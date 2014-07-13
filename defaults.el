@@ -53,20 +53,9 @@
                 tags-file-name
                 register-alist)))
 
-;; backup files.
-(setq version-control t)
-(setq delete-old-versions 1)
-(setq kept-new-versions 6)
-(setq kept-old-versions 6)
-(setq backup-by-copying t)
-(add-hook 'before-save-hook
-          '(lambda ()
-	     (setq buffer-backed-up nil)))
-;; backup directory.
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+;; Avoid autosave due vcs tools in place:
+(setq backup-inhibited 1)
+(setq auto-save-default nil)
 
 ;; mark current line.
 (global-hl-line-mode 1)
