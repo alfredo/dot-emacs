@@ -4,8 +4,10 @@
 
 (setq fill-column 70)
 (column-number-mode 1)
-(show-paren-mode t)
 (global-font-lock-mode 1)
+
+;; Parenthesis:
+(show-paren-mode t)
 
 ;; make selected area visible.
 (setq transient-mark-mode t)
@@ -64,9 +66,9 @@
 (put 'upcase-region 'disabled nil)
 
 ;; scroll configuration.
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) 
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
-(setq mouse-wheel-follow-mouse 't) 
+(setq mouse-wheel-follow-mouse 't)
 (setq scroll-step 1)
 
 ;; grep configuration.
@@ -74,3 +76,8 @@
 
 ;; Overwrite any selected region with new text
 (delete-selection-mode 1)
+
+;; favour utf-8 encoding:
+(prefer-coding-system 'utf-8)
+(when (display-graphic-p)
+  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
