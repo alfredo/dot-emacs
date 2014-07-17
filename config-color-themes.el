@@ -15,8 +15,9 @@
     ;; Major modes
     (lisp-interaction-mode . "i")
     (hi-lock-mode . "")
-    (python-mode . "Py")
-    (emacs-lisp-mode . "EL"))
+    (python-mode . "Π")
+    (projectile-mode . "")
+    (emacs-lisp-mode . "Ε"))
   "Alist for `clean-mode-line'.
 
 When you add a new element to the alist, keep in mind that you

@@ -60,14 +60,6 @@
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
 
-;; Beautify json input:
-(defun beautify-json ()
-  (interactive)
-  (let ((b (if mark-active (min (point) (mark)) (point-min)))
-        (e (if mark-active (max (point) (mark)) (point-max))))
-    (shell-command-on-region b e
-     "python -mjson.tool" (current-buffer) t)))
-
 ;; chmod u+x files that have a shebang line
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
@@ -156,3 +148,6 @@ Don't mess with special buffers."
        '(diminish 'global-whitespace-mode "ᗣ"))
      (eval-after-load "whitespace"
        '(diminish 'whitespace-mode ""))))
+
+(sml/setup)
+(sml/apply-theme 'automatic)
