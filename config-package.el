@@ -4,10 +4,11 @@
 (setq package-list '(exec-path-from-shell smex yasnippet dropdown-list
     color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized
     iy-go-to-char key-chord python flymake-cursor flymake-python-pyflakes
-	bm restclient flymake-jslint flymake-sass flymake-ruby puppet-mode s
+    bm restclient flymake-jslint flymake-sass flymake-ruby puppet-mode s
     revive nyan-mode magit mic-paren rainbow-mode expand-region browse-kill-ring
     gist go-mode sass-mode scss-mode yaml-mode fic-mode coffee-mode
-    moz-controller undo-tree goto-last-change diminish))
+    moz-controller projectile undo-tree goto-last-change diminish flx-ido
+    json-reformat dash dash-functional smart-mode-line))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
