@@ -76,6 +76,7 @@
 
 ;; Overwrite any selected region with new text
 (delete-selection-mode 1)
+(setq word-wrap t)
 
 ;; favour utf-8 encoding:
 (prefer-coding-system 'utf-8)
