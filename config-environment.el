@@ -24,6 +24,8 @@
 ;; Start up message
 (setq initial-scratch-message "")
 
+(setq default-directory "~/")
+
 (defun set-frame-size-according-to-resolution ()
   (interactive)
   (if window-system
