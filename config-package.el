@@ -8,7 +8,8 @@
     revive nyan-mode magit mic-paren rainbow-mode expand-region browse-kill-ring
     gist go-mode sass-mode scss-mode yaml-mode fic-mode coffee-mode
     moz-controller projectile undo-tree goto-last-change diminish flx-ido
-    json-reformat dash dash-functional smart-mode-line))
+    json-reformat dash dash-functional smart-mode-line firebelly-theme
+    moe-theme))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)

@@ -1,7 +1,10 @@
 
 ;; (color-theme-tomorrow-night-eighties)
 
-(require 'color-theme-sanityinc-solarized)
+;; (require 'color-theme-sanityinc-solarized)
+(require 'moe-theme)
+(load-theme 'moe-dark t)
+;; (load-theme 'firebelly)
 
 ;; (require 'nyan-mode)
 ;; (add-hook 'text-mode-hook (lambda () (nyan-mode t)))
