@@ -129,14 +129,6 @@ Don't mess with special buffers."
       (narrow-to-region start end))
       (switch-to-buffer buf)))
 
-;; Undo tweaks:
-(require 'undo-tree)
-(global-undo-tree-mode 1)
-(eval-after-load "diminish"
-  '(progn
-     (eval-after-load "undo-tree"
-       '(diminish 'undo-tree-mode "↺"))))
-
 (require 'diminish)
 
 ;; show whitespace
@@ -150,6 +142,13 @@ Don't mess with special buffers."
        '(diminish 'global-whitespace-mode "ᗣ"))
      (eval-after-load "whitespace"
        '(diminish 'whitespace-mode ""))))
+
+;; (defadvice show-paren-function (after my-echo-paren-matching-line activate)
+;;   "If a matching paren is off-screen, echo the matching line."
+;;   (when (char-equal (char-syntax (char-before (point))) ?\))
+;;     (let ((matching-text (blink-matching-open)))
+;;       (when matching-text
+;;         (message matching-text)))))
 
 (sml/setup)
 (sml/apply-theme 'automatic)

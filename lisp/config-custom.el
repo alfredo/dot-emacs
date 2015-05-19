@@ -89,3 +89,9 @@
         ((and (looking-at "\\_>") (not (looking-at "end")))
          (hippie-expand nil))
         (t (indent-for-tab-command))))
+
+;; (defun fab-test ()
+;;   (interactive)
+;;   (let ((default-directory "/ssh:i:"))
+;;     (start-file-process "fab-tests" (get-buffer-create "*fab test*")
+;;                         "/bin/sh" "-c" "fab test")))
