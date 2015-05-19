@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: json
+# key: json
+# --
+import json; assert False, json.dumps($1, indent=2)$0

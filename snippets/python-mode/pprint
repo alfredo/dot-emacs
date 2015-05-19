@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: pprint
+# key: pprint
+# --
+import pprint; assert False, pprint.pformat($1, indent=4)$0
