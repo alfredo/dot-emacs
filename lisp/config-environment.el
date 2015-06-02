@@ -1,6 +1,9 @@
 ;; Use the current user shell.
 (exec-path-from-shell-initialize)
 
+;; Silent magit instructions:
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 ;; Enable flymake for all files.
 ;; dissabled until this is fixed https://github.com/lunaryorn/flycheck/issues/11
 ;; (add-hook 'find-file-hook 'flycheck-mode)
