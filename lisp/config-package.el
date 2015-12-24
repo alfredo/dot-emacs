@@ -42,6 +42,7 @@
                      ggtags
                      helm
                      helm-projectile
+                     helm-swoop
                      smart-mode-line
                      ))
 
