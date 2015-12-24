@@ -1,5 +1,0 @@
-# contributor: Alfredo Aguirre madewithbyt.es
-# name: forms.IntegerField
-# key: integer
-# --
-${1:name} = forms.IntegerField($2)

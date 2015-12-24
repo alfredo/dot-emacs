@@ -1,5 +1,0 @@
-# contributor: Alfredo Aguirre madewithbyt.es
-# name: forms.DateField
-# key: date
-# --
-$1 = forms.DateField($2)

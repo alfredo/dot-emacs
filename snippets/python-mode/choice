@@ -2,4 +2,4 @@
 # name: forms.ChoiceField
 # key: choice
 # --
-$1 = forms.ChoiceField(choices=${2})
+$1 = forms.ChoiceField(choices=${2:$1_CHOICES})

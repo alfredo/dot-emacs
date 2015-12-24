@@ -1,5 +1,0 @@
-# contributor: Alfredo Aguirre madewithbyt.es
-# name: forms.EmailField
-# key: email
-# --
-$1 = forms.EmailField($2)
