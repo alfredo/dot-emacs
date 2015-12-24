@@ -52,6 +52,8 @@
 (load-library "config-key-bindings")
 ;; projectile config
 (load-library "config-projectile")
+;; helm setup
+(load-library "config-helm")
 ;; yas config
 (load-library "config-yas")
 ;; themes

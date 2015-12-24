@@ -125,6 +125,3 @@ Don't mess with special buffers."
 ;; Colourful parenthesis
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-(require 'helm-config)
-(helm-mode 1)
