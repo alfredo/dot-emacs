@@ -4,16 +4,45 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
-(setq package-list '(exec-path-from-shell smex yasnippet dropdown-list
-    color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized
-    iy-go-to-char key-chord python flymake-cursor flymake-python-pyflakes
-    bm restclient flymake-jslint flymake-sass flymake-ruby puppet-mode s
-    revive nyan-mode magit mic-paren rainbow-mode expand-region browse-kill-ring
-    gist go-mode sass-mode scss-mode yaml-mode fic-mode coffee-mode
-    moz-controller projectile goto-last-change diminish flx-ido
-    json-reformat dash dash-functional smart-mode-line firebelly-theme
-    moe-theme js2-mode arduino-mode git-timemachine rainbow-delimiters
-    writegood-mode log4j-mode dockerfile-mode))
+(setq package-list '(
+                     exec-path-from-shell  ;; Pick variables from user env
+                     yasnippet
+                     iy-go-to-char ;; Go to next character
+                     python
+                     flymake-cursor
+                     flymake-python-pyflakes
+                     flymake-jslint
+                     flymake-sass
+                     puppet-mode
+                     s
+                     revive
+                     nyan-mode
+                     magit
+                     mic-paren
+                     rainbow-mode
+                     expand-region
+                     browse-kill-ring
+                     go-mode
+                     sass-mode
+                     scss-mode
+                     fic-mode  ;; Fixme messages highlighted
+                     moz-controller
+                     projectile
+                     goto-last-change
+                     json-reformat
+                     dash
+                     dash-functional
+                     moe-theme
+                     js2-mode
+                     arduino-mode
+                     git-timemachine
+                     rainbow-delimiters
+                     dockerfile-mode
+                     terraform-mode
+                     ggtags
+                     helm
+                     smart-mode-line
+                     ))
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
