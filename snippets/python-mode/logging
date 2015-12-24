@@ -1,0 +1,7 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: logging
+# key: logging
+# --
+import logging
+
+logger = logging.getLogger(__name__)
