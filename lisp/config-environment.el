@@ -1,13 +1,6 @@
 ;; Use the current user shell.
 (exec-path-from-shell-initialize)
 
-;; Silent magit instructions:
-(setq magit-last-seen-setup-instructions "1.4.0")
-
-;; Enable flymake for all files.
-;; dissabled until this is fixed https://github.com/lunaryorn/flycheck/issues/11
-;; (add-hook 'find-file-hook 'flycheck-mode)
-
 ;; Unique filenames for duplicate named buffers.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
@@ -17,9 +10,8 @@
 (setq-default save-place t)
 
 ;; Expand regions in semantical units
-;; TODO: Use a more accessible key combination
-;; (require 'expand-region)
-;; (global-set-key (kbd "C-@") 'er/expand-region)
+(require 'expand-region)
+(global-set-key (kbd "C-c e") 'er/expand-region)
 
 ;; Do not show scratch at the begining
 (setq inhibit-startup-message t)
@@ -48,15 +40,6 @@
                              (frame-char-height)))))))
 
 (set-frame-size-according-to-resolution)
-
-;; Remember the most used commands
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
-;; Provide access to the previous M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; Only use y / n as a valid answer
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -103,11 +86,6 @@
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
 
-(defun insert-date ()
-  "Insert a timestamp according to locale's date and time format."
-  (interactive)
-  (insert (format-time-string "%c" (current-time))))
-
 (defun kill-other-buffers ()
   "Kill all buffers but the current one.
 Don't mess with special buffers."
@@ -132,26 +110,21 @@ Don't mess with special buffers."
       (narrow-to-region start end))
       (switch-to-buffer buf)))
 
-(require 'diminish)
-
 ;; show whitespace
 (require 'whitespace)
 (setq whitespace-style '(trailing lines tab-mark))
 (setq whitespace-line-column 80)
 (global-whitespace-mode 1)
-(eval-after-load "diminish"
-  '(progn
-     (eval-after-load "whitespace"
-       '(diminish 'global-whitespace-mode "ᗣ"))
-     (eval-after-load "whitespace"
-       '(diminish 'whitespace-mode ""))))
 
-;; (defadvice show-paren-function (after my-echo-paren-matching-line activate)
-;;   "If a matching paren is off-screen, echo the matching line."
-;;   (when (char-equal (char-syntax (char-before (point))) ?\))
-;;     (let ((matching-text (blink-matching-open)))
-;;       (when matching-text
-;;         (message matching-text)))))
+;; Go to next CHAR which is similar to "f" and "t" in vim
+(global-set-key (kbd "C-c f") 'iy-go-to-char)
+(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+(global-set-key (kbd "C-c ;") 'iy-go-to-or-up-to-continue)
+(global-set-key (kbd "C-c ,") 'iy-go-to-or-up-to-continue-backward)
 
-(sml/setup)
-(sml/apply-theme 'automatic)
+;; Colourful parenthesis
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+(require 'helm-config)
+(helm-mode 1)
