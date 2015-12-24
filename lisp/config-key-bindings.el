@@ -1,21 +1,15 @@
 ;; Turn on the menu bar for exploring new modes
 (global-set-key (kbd "C-<f10>") 'menu-bar-mode)
 
-;; Use regex searches by default.
-;; (global-set-key (kbd "C-s") 'isearch-forward-regexp)
-;; (global-set-key (kbd "\C-r") 'isearch-backward-regexp)
-;; (global-set-key (kbd "C-M-s") 'isearch-forward)
-;; (global-set-key (kbd "C-M-r") 'isearch-backward)
+;; Use regex searches by default:
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-c s") 'isearch-forward)
+(global-set-key (kbd "C-c r") 'isearch-backward)
 
-;; Jump to a definition in the current file.
+;; Jump to a definition in the current file:
 (global-set-key (kbd "C-c i") 'ido-imenu)
-
-;; nom nom eat white space for next word
-(global-set-key (kbd "M-s") 'fixup-whitespace)
-
-(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
-(global-set-key (kbd "C-c t") 'delete-trailing-whitespace)
-
+;; List lines that have the given pattern:
 (global-set-key (kbd "C-c o") 'occur)
 (global-set-key (kbd "C-c g") 'goto-line)
 
@@ -79,21 +73,6 @@ there's a region, all lines that region covers will be duplicated."
   (flush-lines "^$")
   )
 
-;; Shortucts by pressing two keys at the same time
-(require 'iy-go-to-char)
-(require 'key-chord)
-(key-chord-mode 1)
-;; Expand function.
-(key-chord-define-global "jk" 'dabbrev-expand)
-;; Go to next given character.
-;; (key-chord-define-global "df" 'iy-go-to-char)
-;; (key-chord-define-global "ds" 'iy-go-to-char-backward)
-;; Go to line number.
-;; (key-chord-define-global "cv" 'goto-line)
-;; bookmarks
-(key-chord-define-global "kl" 'bm-toggle)
-(key-chord-define-global "l;" 'bm-next)
-
-;; expand in semantical units
+;; Expand in semantical units:
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
