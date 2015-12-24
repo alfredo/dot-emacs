@@ -41,6 +41,7 @@
                      terraform-mode
                      ggtags
                      helm
+                     helm-projectile
                      smart-mode-line
                      ))
 
