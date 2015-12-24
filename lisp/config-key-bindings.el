@@ -7,8 +7,6 @@
 (global-set-key (kbd "C-c s") 'isearch-forward)
 (global-set-key (kbd "C-c r") 'isearch-backward)
 
-;; Jump to a definition in the current file:
-(global-set-key (kbd "C-c i") 'ido-imenu)
 ;; List lines that have the given pattern:
 (global-set-key (kbd "C-c o") 'occur)
 (global-set-key (kbd "C-c g") 'goto-line)
