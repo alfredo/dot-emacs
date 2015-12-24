@@ -1,4 +1,6 @@
-;; (setq flymake-python-pyflakes-executable "flake8")
+(setenv "LC_CTYPE" "UTF-8")
+
+;;(setq flymake-python-pyflakes-executable "flake8")
 
 (setq flymake-python-pyflakes-executable "pyflakespep8")
 
@@ -14,7 +16,7 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pychecker-init)))
 
-;; (add-hook 'python-mode-hook 'flymake-mode)
+(add-hook 'python-mode-hook 'flymake-mode)
 (load-library "flymake-cursor")
 
 (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
@@ -25,6 +27,9 @@
       "\\(.*Warning.*\\|^redefinition\\|.*unused.*\\|used$\\)"
     "^\\([WFCN]\\|E[0-7]\\)"))
 
+(custom-set-variables
+ '(help-at-pt-timer-delay 0.5)
+ '(help-at-pt-display-when-idle '(flymake-overlay)))
 
 (defun django-insert-trans-block (from to &optional buffer)
  (interactive "*r")
