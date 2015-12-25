@@ -2,6 +2,7 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+
 (setq fill-column 70)
 (column-number-mode 1)
 (global-font-lock-mode 1)
@@ -16,12 +17,15 @@
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
 
-;; unicode.
-(prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
+;; kill ring:
+(setq
+ global-mark-ring-max 9999
+ mark-ring-max 9999
+ ; if NIL, kill whole line and move the next line up
+ kill-whole-line t
+ mode-require-final-newline t
+ )
+
 
 ;; no ring bell.
 (setq ring-bell-function 'ignore)
@@ -71,14 +75,15 @@
 (setq mouse-wheel-follow-mouse 't)
 (setq scroll-step 1)
 
-;; grep configuration.
-(custom-set-variables '(grep-program "ack -H -a --nogroup"))
-
 ;; Overwrite any selected region with new text
 (delete-selection-mode 1)
 (setq word-wrap t)
 
 ;; favour utf-8 encoding:
 (prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
 (when (display-graphic-p)
   (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
