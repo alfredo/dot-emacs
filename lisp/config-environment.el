@@ -37,7 +37,7 @@
     ;; get the height we want
     (add-to-list 'default-frame-alist
          (cons 'height (/ (- (x-display-pixel-height) 200)
-                             (frame-char-height)))))))
+                          (frame-char-height)))))))
 
 (set-frame-size-according-to-resolution)
 
@@ -125,3 +125,39 @@ Don't mess with special buffers."
 ;; Colourful parenthesis
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+
+(find-file "~/Dropbox/agenda/init.org")
+
+(add-hook 'c-mode-common-hook
+    (lambda ()
+      (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode, 'python-mode)
+  (ggtags-mode 1))))
+
+(require 'volatile-highlights)
+(volatile-highlights-mode t)
+
+(setq undo-tree-auto-save-history t)
+(global-undo-tree-mode)
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+(defalias 'list-buffers 'ibuffer)
+;; Group buffers by VC root:
+(add-hook 'ibuffer-hook
+          (lambda ()
+            (ibuffer-vc-set-filter-groups-by-vc-root)
+            (unless (eq ibuffer-sorting-mode 'alphabetic)
+              (ibuffer-do-sort-by-alphabetic))))
+
+(setq ibuffer-formats
+      '((mark modified read-only vc-status-mini " "
+              (name 18 18 :left :elide)
+              " "
+              (size 9 -1 :right)
+              " "
+              (mode 16 16 :left :elide)
+              " "
+              (vc-status 16 16 :left)
+              " "
+              filename-and-process)))
