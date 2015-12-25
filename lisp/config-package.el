@@ -8,7 +8,6 @@
                      exec-path-from-shell  ;; Pick variables from user env
                      yasnippet
                      iy-go-to-char ;; Go to next character
-                     python
                      flymake-cursor
                      flymake-python-pyflakes
                      flymake-jslint
@@ -16,7 +15,6 @@
                      puppet-mode
                      s
                      revive
-                     nyan-mode
                      magit
                      mic-paren
                      rainbow-mode
@@ -44,6 +42,13 @@
                      helm-projectile
                      helm-swoop
                      smart-mode-line
+                     volatile-highlights
+                     clean-aindent-mode
+                     undo-tree
+                     jedi-core
+                     company
+                     company-jedi
+                     ibuffer-vc
                      ))
 
 (add-to-list 'package-archives
