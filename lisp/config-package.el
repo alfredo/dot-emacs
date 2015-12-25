@@ -17,6 +17,7 @@
                      revive
                      magit
                      mic-paren
+                     nyan-mode
                      rainbow-mode
                      expand-region
                      browse-kill-ring
