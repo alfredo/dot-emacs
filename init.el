@@ -66,6 +66,8 @@
 (load-library "config-css")
 ;; javascript setup
 (load-library "config-javascript")
+;; eshell
+(load-library "config-eshell")
 ;; custom setup
 (load-library "config-custom")
 
