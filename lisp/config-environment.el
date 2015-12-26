@@ -137,7 +137,6 @@ Don't mess with special buffers."
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 
-(setq undo-tree-auto-save-history t)
 (global-undo-tree-mode)
 
 (add-hook 'after-init-hook 'global-company-mode)
