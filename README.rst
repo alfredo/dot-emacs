@@ -9,7 +9,7 @@ Requirements
 
 - https://github.com/alfredo/slash-bin
 - jslint
-
+- Python requirements: flymake jedi
 
 Tips
 ----
@@ -44,21 +44,29 @@ Enabling JS validation::
 
     M-x flymake-jslint-load
 
+C-=  Select in semantic regions
+C-c f - Go to next character typed
+C-c F - Go to next character typed
+C-c e - expand in semantic units
+Moz mode: https://github.com/RenWenshan/emacs-moz-controller
+narrow-to-region-indirect: Restrict editing in this buffer to the current region, indirectly.
+C-c i -  Go to current definition.
+C-c o - List lines that have pattern
+shell-current-directory - shell in current directory
+delete-this-buffer-and-file
+M-x helm-swoop - search
+During isearch M-i to hand the word over to helm-swoop
+C-c p p - All projects
+C-c p f - Search all files in project
+M-x toggle-debug-on-error RET - Debug errors on command
+M-. ctag definition at point. (Inits any mechanics).
+M-x list-faces-display - view what can be changed faces.
+C-x C-b - List buffers by VC.
+M-x narrow-to-region-indirect - Limit edit text to selected section.
+
 
 Useful documentation
 ====================
 
-- String manipulation https://github.com/magnars/s.el
-
 - eshell http://www.masteringemacs.org/articles/2010/12/13/complete-guide-mastering-eshell/
-
-
-Update melpa packages
----------------------
-
-Refresh the content of the packages: ``package-refresh-contents``.
-Show all the available packages:``package-list-packages``.
-Mark all upgradable packages with:``U``.
-Execute:``x``.
-
-Please note that once the packages are downloaded they are compiled to ``elc`` files. This makes a bit more complicated to override any pre-existing behaviour. Removing these files usually does the trick.
+- helm/projectile http://tuhdo.github.io/helm-projectile.html
