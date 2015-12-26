@@ -122,9 +122,6 @@ Don't mess with special buffers."
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-
-(find-file "~/Dropbox/agenda/init.org")
-
 (add-hook 'c-mode-common-hook
     (lambda ()
       (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode, 'python-mode)

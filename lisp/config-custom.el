@@ -35,3 +35,6 @@
         ((and (looking-at "\\_>") (not (looking-at "end")))
          (hippie-expand nil))
         (t (indent-for-tab-command))))
+
+;; open main org file::
+(find-file "~/Dropbox/agenda/init.org")
