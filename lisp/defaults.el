@@ -45,10 +45,10 @@
 ;; save a bunch of variables to the desktop file
 ;; for lists specify the len of the maximal saved data also
 (setq desktop-globals-to-save
-      (append '((extended-command-history . 30)
-                (file-name-history        . 100)
-                (grep-history             . 30)
-                (compile-history          . 30)
+      (append '((extended-command-history . 50)
+                (file-name-history        . 200)
+                (grep-history             . 100)
+                (compile-history          . 100)
                 (minibuffer-history       . 50)
                 (query-replace-history    . 60)
                 (read-expression-history  . 60)
