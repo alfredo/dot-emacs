@@ -24,7 +24,7 @@
                      go-mode
                      sass-mode
                      scss-mode
-                     fic-mode  ;; Fixme messages highlighted
+                     fic-mode  ;; Fixme mode messages highlighted
                      moz-controller
                      projectile
                      goto-last-change
@@ -53,6 +53,9 @@
                      smartparens
                      diminish
                      helm
+                     haskell-mode
+                     flycheck-haskell
+                     company-ghci
                      ))
 
 (add-to-list 'package-archives
