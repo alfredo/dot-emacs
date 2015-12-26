@@ -94,10 +94,6 @@ Don't mess with special buffers."
     (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
       (kill-buffer buffer))))
 
-;; Prepar efonts
-(setq source_code_pro "-apple-Source_Code_Pro-medium-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-(setq ubuntu_mono "-apple-Ubuntu_Mono-medium-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-(set-face-attribute 'default nil :font source_code_pro)
 
 (ns-set-resource nil "ApplePressAndHoldEnabled" "NO")
 
