@@ -56,8 +56,6 @@
 (load-library "config-helm")
 ;; yas config
 (load-library "config-yas")
-;; themes
-(load-library "config-color-themes")
 ;; python mode
 (load-library "config-python")
 ;; python mode
@@ -70,6 +68,8 @@
 (load-library "config-eshell")
 ;; custom setup
 (load-library "config-custom")
+;; themes
+(load-library "config-color-themes")
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

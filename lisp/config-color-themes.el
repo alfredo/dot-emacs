@@ -19,3 +19,19 @@
      (mapc
       (lambda (face) (set-face-attribute face nil :font ubuntu_mono))
       faces))
+
+;; Make sure they are executed after the modes have been loaded:
+(require 'diminish)
+(setq diminish-list
+      '(
+        global-whitespace-mode
+        volatile-highlights-mode
+        smartparens-mode
+        yas-minor-mode
+        helm-mode
+        projectile-mode
+        undo-tree-mode
+        flymake-mode
+        ))
+(dolist (mode diminish-list) (diminish mode))
+(eval-after-load "company" '(diminish 'company-mode))

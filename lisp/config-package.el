@@ -51,6 +51,7 @@
                      company-jedi
                      ibuffer-vc
                      smartparens
+                     diminish
                      ))
 
 (add-to-list 'package-archives
