@@ -66,6 +66,8 @@
 (load-library "config-javascript")
 ;; eshell
 (load-library "config-eshell")
+;; haskell
+(load-library "config-haskell")
 ;; custom setup
 (load-library "config-custom")
 ;; themes

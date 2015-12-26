@@ -52,6 +52,7 @@
                      ibuffer-vc
                      smartparens
                      diminish
+                     helm
                      ))
 
 (add-to-list 'package-archives
