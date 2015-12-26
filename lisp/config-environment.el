@@ -161,3 +161,7 @@ Don't mess with special buffers."
               (vc-status 16 16 :left)
               " "
               filename-and-process)))
+
+(require 'smartparens-config)
+(add-hook 'js-mode-hook 'smartparens-mode)
+(add-hook 'python-mode-hook 'smartparens-mode)

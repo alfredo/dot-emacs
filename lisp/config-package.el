@@ -50,6 +50,7 @@
                      company
                      company-jedi
                      ibuffer-vc
+                     smartparens
                      ))
 
 (add-to-list 'package-archives
