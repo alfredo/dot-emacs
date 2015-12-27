@@ -35,3 +35,13 @@
         ))
 (dolist (mode diminish-list) (diminish mode))
 (eval-after-load "company" '(diminish 'company-mode))
+
+(set-face-attribute 'flymake-errline nil
+                    :underline '(:color "red" :style wave)
+                    :weight 'bold
+                    :background nil)
+(set-face-attribute 'flymake-warnline nil
+                    :underline '(:color "yellow" :style wave)
+                    :weight 'bold
+                    :background nil)
+(put 'narrow-to-region 'disabled nil)
