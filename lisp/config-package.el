@@ -5,9 +5,9 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (setq package-list '(
-                     exec-path-from-shell  ;; Pick variables from user env
+                     exec-path-from-shell
                      yasnippet
-                     iy-go-to-char ;; Go to next character
+                     iy-go-to-char
                      flymake-cursor
                      flymake-python-pyflakes
                      flymake-jslint
@@ -24,7 +24,7 @@
                      go-mode
                      sass-mode
                      scss-mode
-                     fic-mode  ;; Fixme mode messages highlighted
+                     fic-mode
                      moz-controller
                      projectile
                      goto-last-change
