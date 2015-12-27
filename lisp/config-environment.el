@@ -158,8 +158,8 @@ Don't mess with special buffers."
 (add-hook 'js-mode-hook 'smartparens-mode)
 
 (require 'fic-mode)
-(add-hook 'python-mode 'turn-on-fic-mode)
-(add-hook 'javscript-mode 'turn-on-fic-mode)
+(fic-mode 1)
+
 ;; yaml mode
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
