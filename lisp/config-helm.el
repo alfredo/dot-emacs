@@ -11,6 +11,13 @@
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
 
+(setq helm-ff-skip-boring-files t)
+(setq helm-boring-file-regexp-list
+  '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "~$"
+    "\\.elc$" "\\.pyc$" "\\.pyo$"))
+(setq helm-boring-buffer-regexp-list
+  '("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area" "\\*tramp" "\\*Minibuf"))
+
 (setq
  ; open helm buffer inside current window, not occupy whole other window
  helm-split-window-in-side-p t
