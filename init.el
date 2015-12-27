@@ -46,8 +46,6 @@
      (360 . "#bd3612"))))
  '(vc-annotate-very-old-color nil))
 
-;; environment setup
-(load-library "config-environment")
 ;; key bindings
 (load-library "config-key-bindings")
 ;; projectile config
@@ -70,5 +68,7 @@
 (load-library "config-haskell")
 ;; custom setup
 (load-library "config-custom")
+;; environment setup
+(load-library "config-environment")
 ;; themes
 (load-library "config-color-themes")
