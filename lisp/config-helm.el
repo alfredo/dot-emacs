@@ -1,6 +1,22 @@
 (require 'helm)
 (require 'helm-config)
 
+;; Make intro keystroke behave like ido in helm
+(defun fu/helm-find-files-navigate-forward (orig-fun &rest args)
+  (if (file-directory-p (helm-get-selection))
+      (apply orig-fun args)
+    (helm-maybe-exit-minibuffer)))
+(advice-add 'helm-execute-persistent-action :around #'fu/helm-find-files-navigate-forward)
+(define-key helm-find-files-map (kbd "<return>") 'helm-execute-persistent-action)
+
+;; Make backward keystroke behave like ido in helm
+(defun fu/helm-find-files-navigate-back (orig-fun &rest args)
+  (if (= (length helm-pattern) (length (helm-find-files-initial-input)))
+      (helm-find-files-up-one-level 1)
+    (apply orig-fun args)))
+(advice-add 'helm-ff-delete-char-backward :around #'fu/helm-find-files-navigate-back)
+
+
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 ; rebind tab to run persistent action
