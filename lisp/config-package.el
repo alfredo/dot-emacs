@@ -56,6 +56,7 @@
                      haskell-mode
                      flycheck-haskell
                      company-ghci
+                     yaml-mode
                      ))
 
 (add-to-list 'package-archives
