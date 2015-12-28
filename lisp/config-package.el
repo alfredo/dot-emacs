@@ -50,7 +50,6 @@
                      company
                      company-jedi
                      ibuffer-vc
-                     smartparens
                      diminish
                      helm
                      haskell-mode

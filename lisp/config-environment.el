@@ -154,9 +154,6 @@ Don't mess with special buffers."
               " "
               filename-and-process)))
 
-(require 'smartparens-config)
-(add-hook 'js-mode-hook 'smartparens-mode)
-
 (require 'fic-mode)
 (fic-mode 1)
 
