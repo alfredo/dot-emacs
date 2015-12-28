@@ -22,9 +22,13 @@
 (setq helm-ff-skip-boring-files t)
 (setq helm-boring-file-regexp-list
   '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "~$"
-    "\\.elc$" "\\.pyc$" "\\.pyo$"))
+    "\\.elc$" "\\.pyc$" "\\.pyo$" "\\.DS_Store$"
+    "\\.cache$" "\\.vagrant$" "\\.sass-cache$"
+    "\\node_modules$" "\\egg.info$"
+    "\\GPATH$" "\\GRTAGS$" "\\GTAGS$"
+    ))
 (setq helm-boring-buffer-regexp-list
-  '("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area" "\\*tramp" "\\*Minibuf"))
+  '("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area" "\\*tramp" "\\*Minibuf" "\\*epc"))
 
 (setq
  ; open helm buffer inside current window, not occupy whole other window
