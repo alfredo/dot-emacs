@@ -17,9 +17,8 @@
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-c h o") 'helm-occur)
 
-(when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
 
 (setq helm-ff-skip-boring-files t)
 (setq helm-boring-file-regexp-list
