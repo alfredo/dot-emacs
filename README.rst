@@ -63,7 +63,7 @@ M-. ctag definition at point. (Inits any mechanics).
 M-x list-faces-display - view what can be changed faces.
 C-x C-b - List buffers by VC.
 M-x narrow-to-region-indirect - Limit edit text to selected section.
-
+C-c h i - helm-semantic-or-imenu
 
 Useful documentation
 ====================
