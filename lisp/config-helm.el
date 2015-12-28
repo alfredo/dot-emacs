@@ -15,6 +15,7 @@
 (global-unset-key (kbd "C-x c"))
 ; make TAB works in terminal
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+(global-set-key (kbd "C-x b") 'helm-mini)
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -27,8 +28,11 @@
     "\\node_modules$" "\\egg.info$"
     "\\GPATH$" "\\GRTAGS$" "\\GTAGS$"
     ))
+
 (setq helm-boring-buffer-regexp-list
-  '("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area" "\\*tramp" "\\*Minibuf" "\\*epc"))
+  '("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area"
+    "\\*tramp" "\\*Minibuf" "\\*epc"
+    ))
 
 (setq
  ; open helm buffer inside current window, not occupy whole other window
