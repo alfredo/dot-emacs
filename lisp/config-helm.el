@@ -27,6 +27,7 @@
     "\\.cache$" "\\.vagrant$" "\\.sass-cache$"
     "\\node_modules$" "\\egg.info$"
     "\\GPATH$" "\\GRTAGS$" "\\GTAGS$"
+    "\\auto-save-list$"
     ))
 
 (setq helm-boring-buffer-regexp-list
