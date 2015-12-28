@@ -45,6 +45,9 @@
  ; scroll 8 lines other window using M-<next>/M-<prior>
  helm-scroll-amount 8
  helm-ff-file-name-history-use-recentf t
+ helm-M-x-fuzzy-match t
+ helm-buffers-fuzzy-matching t
+ helm-recentf-fuzzy-match    t
  )
 
 (helm-mode 1)
