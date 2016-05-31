@@ -67,9 +67,10 @@
 (setq auto-mode-alist (cons '("\\.pp$" . puppet-mode) auto-mode-alist))
 
 ;; only use spaces as tab
-(setq default-indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 ;; if a mode uses tabs only indent by 4. I am looking at you go.
 (setq default-tab-width 4)
+(custom-set-variables '(tab-width 4))
 
 ;; Vagrant files
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
