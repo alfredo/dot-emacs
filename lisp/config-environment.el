@@ -177,3 +177,5 @@ Don't mess with special buffers."
 
 (global-set-key (kbd "M-o") 'other-window)
 
+(require 're-builder)
+(setq reb-re-syntax 'string)
