@@ -164,3 +164,14 @@ Don't mess with special buffers."
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
 (semantic-mode 1)
+
+(setq read-file-name-completion-ignore-case t)
+(setq read-buffer-completion-ignore-case t)
+(mapc (lambda (x)
+        (add-to-list 'completion-ignored-extensions x))
+      '(".aux" ".bbl" ".blg" ".exe"
+        ".log" ".meta" ".out" ".pdf"
+        ".synctex.gz" ".tdo" ".toc"
+        "-pkg.el" "-autoloads.el"
+        "Notes.bib" "auto/"))
+
