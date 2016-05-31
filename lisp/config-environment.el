@@ -57,7 +57,7 @@
 
 ;; show current function
 (require 'which-func)
-(add-to-list 'which-func-modes '(org-mode python-mode))
+(add-to-list 'which-func-modes '(org-mode python-mode javscript-mode c++-mode))
 (which-func-mode 1)
 
 ;; Treat camel-case words as single words
@@ -136,7 +136,7 @@ Don't mess with special buffers."
 (add-hook 'after-init-hook 'global-company-mode)
 
 (defalias 'list-buffers 'ibuffer)
-;; Group buffers by VC root:
+
 (add-hook 'ibuffer-hook
           (lambda ()
             (ibuffer-vc-set-filter-groups-by-vc-root)
