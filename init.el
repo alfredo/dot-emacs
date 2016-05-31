@@ -27,6 +27,8 @@
 (load-library "config-eshell")
 ;; haskell
 (load-library "config-haskell")
+;; org mode
+(load-library "config-org")
 ;; custom setup
 (load-library "config-custom")
 ;; environment setup
