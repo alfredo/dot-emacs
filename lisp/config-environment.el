@@ -175,3 +175,5 @@ Don't mess with special buffers."
         "-pkg.el" "-autoloads.el"
         "Notes.bib" "auto/"))
 
+(global-set-key (kbd "M-o") 'other-window)
+
