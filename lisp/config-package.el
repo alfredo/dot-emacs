@@ -56,6 +56,10 @@
                      flycheck-haskell
                      company-ghci
                      yaml-mode
+                     elm-mode
+                     elixir-mode
+                     evil
+                     web-mode
                      ))
 
 (add-to-list 'package-archives
