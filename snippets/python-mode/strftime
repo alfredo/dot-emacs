@@ -1,0 +1,6 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: strftime
+# key: strftime
+# --
+strftime('%Y%m%d-%H%M%S')$0
+
