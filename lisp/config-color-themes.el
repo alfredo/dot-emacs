@@ -6,8 +6,9 @@
 (load-theme 'moe-dark t)
 
 ;; Prepare fonts
-(setq source_code_pro "-apple-Source_Code_Pro-medium-normal-normal-*-*-*-*-*-m-0-iso10646-1")
-(setq ubuntu_mono "-apple-Ubuntu_Mono-medium-normal-normal-*-*-*-*-*-m-0-iso10646-1 Mono-7")
+;; Output of emacs `describe-font`:
+(setq source_code_pro "-*-Source Code Pro-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+(setq ubuntu_mono "-*-Ubuntu Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
 
 (set-face-attribute 'default nil :font source_code_pro)
