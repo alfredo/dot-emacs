@@ -115,9 +115,10 @@ Don't mess with special buffers."
 
 ;; Go to next CHAR which is similar to "f" and "t" in vim
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
-(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+(global-set-key (kbd "C-c b") 'iy-go-to-char-backward)
 (global-set-key (kbd "C-c ;") 'iy-go-to-or-up-to-continue)
 (global-set-key (kbd "C-c ,") 'iy-go-to-or-up-to-continue-backward)
+(global-set-key (kbd "C-z") 'zap-to-char)
 
 ;; Colourful parenthesis
 (require 'rainbow-delimiters)
