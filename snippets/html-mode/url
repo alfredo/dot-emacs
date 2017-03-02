@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% url "" %}
+# key: url
+# --
+{% url '$1' %}$0

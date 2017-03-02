@@ -1,0 +1,5 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: {% static "" %}
+# key: static
+# --
+{% static '$1' %}$0

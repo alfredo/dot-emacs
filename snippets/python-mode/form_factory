@@ -1,0 +1,10 @@
+# contributor: Alfredo Aguirre madewithbyt.es
+# name: form_factory
+# key: form_factory
+# --
+
+def $1($2):
+    fields = {
+        '$3': $4,
+    }
+    return type('$5', (forms.BaseForm,), {'base_fields': fields})$0

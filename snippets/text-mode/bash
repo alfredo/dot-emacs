@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+set -u
+set -o pipefail
+IFS=$'\n\t'
+
+exec 1> >(logger -s -t $(basename $0)) 2>&1
+
+
+
+function finish {
+   echo "DONE."
+}
+trap finish EXIT
