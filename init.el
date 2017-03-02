@@ -1,12 +1,15 @@
-; Load directories
-;; (add-to-list 'load-path user-emacs-directory)
+;; Load directories
+
+(package-initialize)
+
 (add-to-list 'load-path (concat user-emacs-directory
                                 (convert-standard-filename "lisp/")))
+(setq custom-file (concat user-emacs-directory
+                                (convert-standard-filename "custom.el")))
 
 (load-library "defaults")
 ;; package install
 (load-library "config-package")
-
 ;; key bindings
 (load-library "config-key-bindings")
 ;; projectile config
@@ -35,3 +38,5 @@
 (load-library "config-environment")
 ;; themes
 (load-library "config-color-themes")
+(transient-mark-mode t)
+
