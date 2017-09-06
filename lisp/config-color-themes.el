@@ -5,6 +5,14 @@
 (require 'moe-theme)
 (load-theme 'moe-dark t)
 
+
+(require 'spaceline-config)
+;; (spaceline-spacemacs-theme)
+(spaceline-emacs-theme)
+(spaceline-helm-mode)
+
+(require 'spaceline-all-the-icons)
+
 ;; Prepare fonts
 ;; Output of emacs `describe-font`:
 (setq source_code_pro "-*-Source Code Pro-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
@@ -44,22 +52,3 @@
                     :weight 'bold
                     :background nil)
 (put 'narrow-to-region 'disabled nil)
-
-(setq-default mode-line-format
-              '("%e" mode-line-front-space
-                ;; Standard info about the current buffer
-                mode-line-mule-info
-                mode-line-client
-                mode-line-modified
-                mode-line-remote
-                mode-line-frame-identification
-                mode-line-buffer-identification " " mode-line-position
-                ;; Some specific information about the current buffer:
-                (vc-mode lunaryorn-vc-mode-line) ; VC information
-                (flycheck-mode flycheck-mode-line) ; Flycheck status
-                (multiple-cursors-mode mc/mode-line) ; Number of cursors
-                ;; Misc information, notably battery state and function name
-                " "
-                mode-line-misc-info
-                ;; And the modes, which I don't really care for anyway
-                " " mode-line-modes mode-line-end-spaces))

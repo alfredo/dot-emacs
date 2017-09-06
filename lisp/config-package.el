@@ -65,6 +65,8 @@
     py-yapf
     suggest
     iedit
+    spaceline
+    spaceline-all-the-icons
     ))
 
 (add-to-list 'package-archives
