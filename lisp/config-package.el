@@ -67,6 +67,7 @@
     iedit
     spaceline
     spaceline-all-the-icons
+    virtualenvwrapper
     ))
 
 (add-to-list 'package-archives
