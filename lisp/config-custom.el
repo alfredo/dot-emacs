@@ -37,4 +37,4 @@
         (t (indent-for-tab-command))))
 
 ;; open main org file::
-(find-file "~/Documents/agenda/init.org")
+;; (find-file "~/Documents/agenda/init.org")
