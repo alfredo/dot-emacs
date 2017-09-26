@@ -2,8 +2,11 @@
 (setq sml/theme 'dark)
 (sml/setup)
 
-(require 'moe-theme)
-(load-theme 'moe-dark t)
+;;(require 'moe-theme)
+;;(load-theme 'moe-dark t)
+(require 'color-theme-sanityinc-tomorrow)
+;; (color-theme-sanityinc-tomorrow-eighties)
+(load-theme 'sanityinc-tomorrow-eighties t)
 
 
 (require 'spaceline-config)
