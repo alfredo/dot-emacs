@@ -69,6 +69,7 @@
     spaceline-all-the-icons
     virtualenvwrapper
     color-theme-sanityinc-tomorrow
+    all-the-icons
     ))
 
 (add-to-list 'package-archives
