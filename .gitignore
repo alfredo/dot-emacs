@@ -19,3 +19,7 @@ projectile.cache
 eshell/
 recentf
 semanticdb/
+session.*
+.emacs.desktop
+.emacs.desktop.lock
+.python-environments/

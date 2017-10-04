@@ -9,7 +9,7 @@
 
 ;; List lines that have the given pattern:
 (global-set-key (kbd "C-c o") 'occur)
-(global-set-key (kbd "C-c g") 'goto-line)
+(global-set-key (kbd "C->") 'goto-line)
 
 (defun duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.

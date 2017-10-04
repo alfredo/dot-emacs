@@ -39,4 +39,4 @@
 ;; themes
 (load-library "config-color-themes")
 (transient-mark-mode t)
-
+(menu-bar-mode -1)
