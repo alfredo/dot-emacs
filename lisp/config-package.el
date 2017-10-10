@@ -70,6 +70,7 @@
     virtualenvwrapper
     color-theme-sanityinc-tomorrow
     all-the-icons
+    super-save
     ))
 
 (add-to-list 'package-archives

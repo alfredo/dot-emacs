@@ -1,6 +1,12 @@
 ;; Use the current user shell.
 (exec-path-from-shell-initialize)
 
+;; enable auto supersave
+(super-save-mode +1)
+(setq super-save-auto-save-when-idle t)
+(setq auto-save-default nil)
+
+
 ;; Unique filenames for duplicate named buffers.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
