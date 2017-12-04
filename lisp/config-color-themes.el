@@ -10,11 +10,18 @@
 
 
 (require 'spaceline-config)
-;; (spaceline-spacemacs-theme)
-(spaceline-emacs-theme)
+(spaceline-spacemacs-theme)
+;; (spaceline-emacs-theme)
 (spaceline-helm-mode)
+(spaceline-info-mode)
 
 (require 'spaceline-all-the-icons)
+(spaceline-all-the-icons-theme)
+(spaceline-all-the-icons--setup-git-ahead)
+;; (use-package spaceline-all-the-icons 
+;;   :after spaceline
+;;   :config (spaceline-all-the-icons-theme))
+
 
 ;; Prepare fonts
 ;; Output of emacs `describe-font`:

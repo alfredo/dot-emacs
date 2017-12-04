@@ -39,7 +39,7 @@
     helm
     helm-projectile
     helm-swoop
-    smart-mode-line
+    ;; smart-mode-line
     volatile-highlights
     clean-aindent-mode
     undo-tree
@@ -71,6 +71,10 @@
     color-theme-sanityinc-tomorrow
     all-the-icons
     super-save
+    grizzl
+    flx
+    helm-flx
+    info+
     ))
 
 (add-to-list 'package-archives

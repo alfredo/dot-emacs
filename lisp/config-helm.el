@@ -38,6 +38,7 @@
     ))
 
 (setq
+ helm-mode-fuzzy-match t
  ; open helm buffer inside current window, not occupy whole other window
  helm-split-window-in-side-p t
  ; move to end or beginning of source when reaching top or bottom of source.
@@ -52,6 +53,7 @@
  helm-recentf-fuzzy-match    t
  helm-semantic-fuzzy-match t
  helm-imenu-fuzzy-match    t
+ helm-locate-fuzzy-match   t
  )
 
 (helm-mode 1)
