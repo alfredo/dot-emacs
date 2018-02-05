@@ -5,14 +5,12 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (setq package-list '(
+    sml-mode
     exec-path-from-shell
     yasnippet
     iy-go-to-char
     flymake-cursor
     flymake-python-pyflakes
-    flymake-jslint
-    flymake-sass
-    puppet-mode
     s
     revive
     magit
@@ -20,26 +18,20 @@
     rainbow-mode
     expand-region
     browse-kill-ring
-    go-mode
-    sass-mode
-    scss-mode
     fic-mode
     json-reformat
     dash
     dash-functional
     moe-theme
-    js2-mode
     arduino-mode
     git-timemachine
     rainbow-delimiters
     dockerfile-mode
-    terraform-mode
     projectile
     ggtags
     helm
     helm-projectile
     helm-swoop
-    ;; smart-mode-line
     volatile-highlights
     clean-aindent-mode
     undo-tree
@@ -48,21 +40,14 @@
     company-jedi
     ibuffer-vc
     diminish
-    ;; haskell-mode
-    ;; flycheck-haskell
-    ;; company-ghci
     yaml-mode
-    elm-mode
     elixir-mode
     evil
-    web-mode
     cider
     flycheck
     json-mode
     rust-mode
-    nyan-mode
     browse-at-remote
-    py-yapf
     suggest
     iedit
     spaceline
@@ -75,6 +60,8 @@
     flx
     helm-flx
     info+
+    yapfify
+    diff-hl
     ))
 
 (add-to-list 'package-archives

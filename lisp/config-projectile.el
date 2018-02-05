@@ -35,6 +35,6 @@
         ".stack-work"
         "migrations"
         ))
-
+;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (projectile-global-mode)
 (helm-projectile-on)

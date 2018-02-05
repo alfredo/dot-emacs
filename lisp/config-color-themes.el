@@ -1,9 +1,3 @@
-(setq sml/no-confirm-load-theme t)
-(setq sml/theme 'dark)
-(sml/setup)
-
-;;(require 'moe-theme)
-;;(load-theme 'moe-dark t)
 (require 'color-theme-sanityinc-tomorrow)
 ;; (color-theme-sanityinc-tomorrow-eighties)
 (load-theme 'sanityinc-tomorrow-eighties t)
@@ -11,33 +5,32 @@
 
 (require 'spaceline-config)
 (spaceline-spacemacs-theme)
-;; (spaceline-emacs-theme)
 (spaceline-helm-mode)
 (spaceline-info-mode)
 
 (require 'spaceline-all-the-icons)
 (spaceline-all-the-icons-theme)
 (spaceline-all-the-icons--setup-git-ahead)
-;; (use-package spaceline-all-the-icons 
-;;   :after spaceline
-;;   :config (spaceline-all-the-icons-theme))
-
 
 ;; Prepare fonts
 ;; Output of emacs `describe-font`:
 (setq source_code_pro "-*-Source Code Pro-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 (setq ubuntu_mono "-*-Ubuntu Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
+(setq share-tech " -UKWN-Share Tech-normal-normal-normal-*-16-*-*-*-*-0-iso10646-1")
 
 
-(set-face-attribute 'default nil :font source_code_pro)
+(set-face-attribute 'default nil :font share-tech)
 (let ((faces '(mode-line
                mode-line-buffer-id
                mode-line-emphasis
                mode-line-highlight
                mode-line-inactive)))
      (mapc
-      (lambda (face) (set-face-attribute face nil :font ubuntu_mono))
+      (lambda (face) (set-face-attribute face nil :font share-tech))
       faces))
+
+(add-to-list 'default-frame-alist '(font . "Iosevka-11"))
+
 
 ;; Make sure they are executed after the modes have been loaded:
 (require 'diminish)
