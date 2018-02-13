@@ -12,7 +12,6 @@
     flymake-cursor
     flymake-python-pyflakes
     s
-    revive
     magit
     mic-paren
     rainbow-mode
@@ -59,7 +58,6 @@
     grizzl
     flx
     helm-flx
-    info+
     yapfify
     diff-hl
     ))
