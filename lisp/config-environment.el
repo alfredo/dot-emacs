@@ -87,7 +87,8 @@ Don't mess with special buffers."
 (require 'whitespace)
 (setq whitespace-style '(trailing lines tab-mark))
 (setq whitespace-line-column 80)
-(global-whitespace-mode 1)
+(global-whitespace-mode t)
+(setq whitespace-global-modes '(python-mode))
 
 ;; Go to next CHAR which is similar to "f" and "t" in vim
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
