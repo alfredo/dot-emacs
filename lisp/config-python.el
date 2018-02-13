@@ -2,7 +2,6 @@
 
 (setq flymake-python-pyflakes-executable "flake8")
 (setq flymake-python-pyflakes-extra-arguments '("--ignore=E731"))
-;; (setq flymake-python-pyflakes-executable "pyflakespep8")
 
 
 (require 'flymake-python-pyflakes)
@@ -15,3 +14,5 @@
 (require 'virtualenvwrapper)
 (venv-initialize-interactive-shells) ;; if you want interactive shell support
 (venv-initialize-eshell) ;; if you want eshell support
+
+(eval-after-load 'flymake '(require 'flymake-cursor))
