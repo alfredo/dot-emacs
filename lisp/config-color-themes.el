@@ -1,5 +1,5 @@
 (require 'color-theme-sanityinc-tomorrow)
-(color-theme-sanityinc-tomorrow-eighties)
+;; (color-theme-sanityinc-tomorrow-eighties)
 (load-theme 'sanityinc-tomorrow-eighties t)
 
 
@@ -29,7 +29,7 @@
       (lambda (face) (set-face-attribute face nil :font share-tech))
       faces))
 
-(add-to-list 'default-frame-alist '(font . "Iosevka-11"))
+(add-to-list 'default-frame-alist '(font . "Iosevka-14"))
 
 
 ;; Make sure they are executed after the modes have been loaded:
