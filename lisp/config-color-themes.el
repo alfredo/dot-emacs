@@ -1,5 +1,5 @@
 (require 'color-theme-sanityinc-tomorrow)
-;; (color-theme-sanityinc-tomorrow-eighties)
+(color-theme-sanityinc-tomorrow-eighties)
 (load-theme 'sanityinc-tomorrow-eighties t)
 
 
@@ -48,10 +48,4 @@
 (dolist (mode diminish-list) (diminish mode))
 (eval-after-load "company" '(diminish 'company-mode))
 
-(set-face-attribute 'flymake-errline nil
-                    :weight 'bold
-                    :background nil)
-(set-face-attribute 'flymake-warnline nil
-                    :weight 'bold
-                    :background nil)
 (put 'narrow-to-region 'disabled nil)

@@ -5,6 +5,7 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (setq package-list '(
+   use-package
     sml-mode
     exec-path-from-shell
     yasnippet
