@@ -87,3 +87,5 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (when (display-graphic-p)
   (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
+
+(setq auto-window-vscroll nil)
