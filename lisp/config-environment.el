@@ -1,4 +1,5 @@
 ;; Use the current user shell.
+
 (exec-path-from-shell-initialize)
 
 ;; enable auto supersave
@@ -37,7 +38,6 @@
 
 ;; show current function
 (require 'which-func)
-(add-to-list 'which-func-modes '(org-mode python-mode javscript-mode))
 (which-func-mode 1)
 
 ;; Treat camel-case words as single words
@@ -71,8 +71,6 @@ Don't mess with special buffers."
     (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
       (kill-buffer buffer))))
 
-
-(ns-set-resource nil "ApplePressAndHoldEnabled" "NO")
 
 (defun narrow-to-region-indirect (start end)
   "Restrict editing in this buffer to the current region, indirectly."
@@ -118,33 +116,8 @@ Don't mess with special buffers."
 
 (add-hook 'after-init-hook 'global-company-mode)
 
-(defalias 'list-buffers 'ibuffer)
-
-(add-hook 'ibuffer-hook
-          (lambda ()
-            (ibuffer-vc-set-filter-groups-by-vc-root)
-            (unless (eq ibuffer-sorting-mode 'alphabetic)
-              (ibuffer-do-sort-by-alphabetic))))
-
-(setq ibuffer-formats
-      '((mark modified read-only vc-status-mini " "
-              (name 18 18 :left :elide)
-              " "
-              (size 9 -1 :right)
-              " "
-              (mode 16 16 :left :elide)
-              " "
-              (vc-status 16 16 :left)
-              " "
-              filename-and-process)))
-
 (require 'fic-mode)
 (fic-mode 1)
-
-;; yaml mode
-(require 'yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
 (semantic-mode 1)
 
@@ -173,80 +146,9 @@ Don't mess with special buffers."
 ;; keyboard scroll one line at a time
 (setq scroll-step 1)
 
-
-
-(defun get-parent-dir (directory)
-  ;; Returns the parent directory of the path given
-  (directory-file-name (file-name-directory directory))
-  )
-
-(defun has-test-dir (directory)
-  ;; Test if directory has a `tests` directory:
-  (file-accessible-directory-p (concat directory "/tests"))
-  )
-
-(defun is-end-leaf-dir (directory)
-  ;; Root directory or projectile root:
-  (or
-   (equal directory "/")
-   (equal directory projectile-project-root)
-   (equal directory (getenv "HOME"))
-   )
-  )
-
-(defun replace-in-string (what with in)
-  ;; String replacement
-  (replace-regexp-in-string (regexp-quote what) with in nil 'literal))
-
-
-(defun get-test-file-name (current-dir buffer-file-name)
-  ;; Extracts the file test from the path and buffer name
-  (setq test-file-name
-        (replace-in-string current-dir "" buffer-file-name))
-  (replace-regexp-in-string "^/[[:ascii:]]+?/" "" test-file-name nil 'literal)
-  )
-
-(defun create-test-file (test-file-name)
-  ;; Creates the given test-file-name and its containing dir:
-  (setq test-dir (file-name-directory test-file-name))
-  (setq init-file (concat test-dir "__init__.py"))
-  (if (not (file-exists-p init-file))
-      (
-       (make-directory test-dir)
-       (write-file init-file)
-       )
-    )
-  (find-file test-file-name)
-  )
-
-(defun get-create-test-file (current-dir buffer-file-name)
-  ;; Creates or opens the test file:
-  (setq test-file-name
-        (concat current-dir "/tests/"
-                (get-test-file-name current-dir buffer-file-name)))
-  (if (file-exists-p test-file-name)
-      (find-file test-file-name)
-    (create-test-file test-file-name))
-  ;; (message (concat current-dir "/tests" test-file-name))
-  )
-
-(defun open-test-file ()
-  "Open or creates the test file for current buffer"
-  ;; TODO incorporate this only for python-mode
-  (interactive)
-  ;; Current directory:
-  (setq current-dir (file-name-directory buffer-file-name))
-  (while (or (not (has-test-dir current-dir)) (is-end-leaf-dir current-dir))
-    ;; Walk one directory up:
-    (setq current-dir (get-parent-dir current-dir))
-    )
-  (if (has-test-dir current-dir)
-      (get-create-test-file current-dir buffer-file-name) ;; then
-    (message "No `tests/` directory found.")              ;; else
-    )
-  )
-
-(global-set-key (kbd "C-c t") 'open-test-file)
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 
 (setq undo-tree-visualizer-timestamps t)
+
+(provide 'config-environment)
+
