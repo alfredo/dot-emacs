@@ -89,3 +89,6 @@
   (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
 
 (setq auto-window-vscroll nil)
+
+(setq mac-option-key-is-meta t)
+(setq mac-option-modifier 'meta)
