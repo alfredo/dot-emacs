@@ -1,3 +1,7 @@
+;;; package --- defaults
+;;; Commentary:
+;;; Code:
+
 ;; Custom configuration of projectile
 (setq projectile-indexing-method 'alien)
 (setq projectile-remember-window-configs t)
@@ -35,6 +39,7 @@
         ".stack-work"
         "migrations"
         ))
-;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (projectile-global-mode)
 (helm-projectile-on)
+
+(provide 'config-projectile)

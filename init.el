@@ -22,8 +22,6 @@
 (load-library "config-python")
 ;; python mode
 (load-library "config-maggit")
-;; css setup
-(load-library "config-css")
 ;; javascript setup
 (load-library "config-javascript")
 ;; eshell
@@ -36,5 +34,5 @@
 (load-library "config-environment")
 ;; themes
 (load-library "config-color-themes")
-(transient-mark-mode t)
-(menu-bar-mode -1)
+
+(provide 'init)

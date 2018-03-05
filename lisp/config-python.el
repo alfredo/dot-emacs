@@ -1,4 +1,6 @@
-(setenv "LC_CTYPE" "UTF-8")
+;;; package --- defaults
+;;; Commentary:
+;;; Code:
 
 (use-package flycheck
   :ensure t
@@ -19,5 +21,7 @@
        nil "_"))))
 
 (require 'virtualenvwrapper)
-(venv-initialize-interactive-shells) ;; if you want interactive shell support
-(venv-initialize-eshell) ;; if you want eshell support
+(venv-initialize-interactive-shells)
+(venv-initialize-eshell)
+
+(provide 'config-python)

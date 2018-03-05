@@ -1,17 +1,14 @@
+;;; package --- defaults
+;;; Commentary:
+;;; Code:
+
 ;;  toolbars removal.
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-
-(setq fill-column 70)
+(setq fill-column 80)
 (column-number-mode 1)
 (global-font-lock-mode 1)
-
-;; Parenthesis:
-(show-paren-mode t)
-
-;; make selected area visible.
-(setq transient-mark-mode t)
 
 ; never use tabs.
 (setq-default indent-tabs-mode nil)
@@ -19,13 +16,12 @@
 
 ;; kill ring:
 (setq
- global-mark-ring-max 9999
- mark-ring-max 9999
+ global-mark-ring-max 99
+ mark-ring-max 99
  ; if NIL, kill whole line and move the next line up
  kill-whole-line t
  mode-require-final-newline t
  )
-
 
 ;; no ring bell.
 (setq ring-bell-function 'ignore)
@@ -59,15 +55,9 @@
                 tags-file-name
                 register-alist)))
 
-;; Avoid autosave due vcs tools in place:
-(setq backup-inhibited 1)
-(setq auto-save-default nil)
 
 ;; mark current line.
 (global-hl-line-mode 1)
-
-;; enable change to uppercase.
-(put 'upcase-region 'disabled nil)
 
 ;; scroll configuration.
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
@@ -84,11 +74,10 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
-(when (display-graphic-p)
-  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
 
 (setq auto-window-vscroll nil)
 
 (setq mac-option-key-is-meta t)
 (setq mac-option-modifier 'meta)
+
+(provide 'defaults)

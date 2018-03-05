@@ -1,3 +1,7 @@
+;;; package --- defaults
+;;; Commentary:
+;;; Code:
+
 (require 'helm)
 (require 'helm-config)
 
@@ -21,20 +25,38 @@
 (global-set-key (kbd "C-c h o") 'helm-occur)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
-
 (setq helm-ff-skip-boring-files t)
 (setq helm-boring-file-regexp-list
-  '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "~$"
-    "\\.elc$" "\\.pyc$" "\\.pyo$" "\\.DS_Store$"
-    "\\.cache$" "\\.vagrant$" "\\.sass-cache$"
-    "\\node_modules$" "\\egg.info$"
-    "\\GPATH$" "\\GRTAGS$" "\\GTAGS$"
-    "\\auto-save-list$"
-    ))
+      '(
+        "\\.git$"
+        "\\.hg$"
+        "\\.svn$"
+        "\\.CVS$"
+        "~$"
+        "\\.elc$"
+        "\\.pyc$"
+        "\\.pyo$"
+        "\\.DS_Store$"
+        "\\.cache$"
+        "\\.vagrant$"
+        "\\.sass-cache$"
+        "\\node_modules$"
+        "\\egg.info$"
+        "\\GPATH$"
+        "\\GRTAGS$"
+        "\\GTAGS$"
+        "\\auto-save-list$"
+        ))
 
 (setq helm-boring-buffer-regexp-list
-  '("\\` " "\\*helm" "\\*helm-mode" "\\*Echo Area"
-    "\\*tramp" "\\*Minibuf" "\\*epc"
+      '(
+        "\\` "
+        "\\*helm"
+        "\\*helm-mode"
+        "\\*Echo Area"
+        "\\*tramp"
+        "\\*Minibuf"
+        "\\*epc"
     ))
 
 (setq
@@ -50,13 +72,15 @@
  helm-ff-file-name-history-use-recentf t
  helm-M-x-fuzzy-match t
  helm-buffers-fuzzy-matching t
- helm-recentf-fuzzy-match    t
+ helm-recentf-fuzzy-match t
  helm-semantic-fuzzy-match t
- helm-imenu-fuzzy-match    t
- helm-locate-fuzzy-match   t
+ helm-imenu-fuzzy-match t
+ helm-locate-fuzzy-match t
  )
 
 (helm-mode 1)
 
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
+
+ (provide 'config-helm)

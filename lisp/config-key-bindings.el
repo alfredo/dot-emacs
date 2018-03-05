@@ -1,5 +1,6 @@
-;; Turn on the menu bar for exploring new modes
-(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+;;; package --- config-key-bindings
+;;; Commentary:
+;;; Code:
 
 ;; Use regex searches by default:
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -57,24 +58,9 @@ there's a region, all lines that region covers will be duplicated."
 (global-set-key [(meta right)] 'end-of-line)
 (global-set-key [(meta left)] 'beginning-of-line)
 
-(defun fix-buffer ()
-  "Remove trailing whitespace, reindent and tab the buffer"
-  (interactive)
-  (delete-trailing-whitespace)
-  (indent-region (point-min) (point-max) nil)
-  (untabify (point-min) (point-max)))
-
-(defun clean-and-utf8 ()
-  "Remove empty lines and change encoding to utf8"
-  (interactive)
-  (set-buffer-file-coding-system 'utf-8-unix t)
-  (flush-lines "^$")
-  )
-
 ;; Expand in semantical units:
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
-
 
 (defun kill-default-buffer ()
   "Kill the currently active buffer -- set to C-x k so that users are not asked which buffer they want to kill."
@@ -83,4 +69,4 @@ there's a region, all lines that region covers will be duplicated."
 
 (global-set-key (kbd "C-x k") 'kill-default-buffer)
 
-
+(provide 'config-key-bindings)
