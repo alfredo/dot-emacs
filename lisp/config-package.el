@@ -32,6 +32,7 @@
     helm
     helm-projectile
     helm-swoop
+    helm-ag
     volatile-highlights
     clean-aindent-mode
     undo-tree
