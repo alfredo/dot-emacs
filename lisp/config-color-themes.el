@@ -1,3 +1,7 @@
+;;; package --- color-themes
+;;; Commentary:
+;;; Code:
+
 (require 'color-theme-sanityinc-tomorrow)
 ;; (color-theme-sanityinc-tomorrow-eighties)
 (load-theme 'sanityinc-tomorrow-eighties t)
@@ -37,3 +41,4 @@
 (eval-after-load "company" '(diminish 'company-mode))
 
 (put 'narrow-to-region 'disabled nil)
+(provide 'config-color-themes)
