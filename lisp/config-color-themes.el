@@ -18,19 +18,7 @@
 (setq ubuntu_mono "-*-Ubuntu Mono-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 (setq share-tech " -UKWN-Share Tech-normal-normal-normal-*-16-*-*-*-*-0-iso10646-1")
 
-
-(set-face-attribute 'default nil :font share-tech)
-(let ((faces '(mode-line
-               mode-line-buffer-id
-               mode-line-emphasis
-               mode-line-highlight
-               mode-line-inactive)))
-     (mapc
-      (lambda (face) (set-face-attribute face nil :font share-tech))
-      faces))
-
-(add-to-list 'default-frame-alist '(font . "Iosevka-14"))
-
+(add-to-list 'default-frame-alist '(font . "Iosevka-12"))
 
 ;; Make sure they are executed after the modes have been loaded:
 (require 'diminish)
