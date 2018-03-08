@@ -152,3 +152,4 @@ Don't mess with special buffers."
 
 (provide 'config-environment)
 
+(global-anzu-mode +1)
