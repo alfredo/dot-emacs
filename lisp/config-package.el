@@ -63,6 +63,7 @@
     helm-flx
     yapfify
     diff-hl
+    anzu
     ))
 
 (add-to-list 'package-archives

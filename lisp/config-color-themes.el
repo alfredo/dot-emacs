@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'color-theme-sanityinc-tomorrow)
-;; (color-theme-sanityinc-tomorrow-eighties)
 (load-theme 'sanityinc-tomorrow-eighties t)
 
 
@@ -11,10 +10,23 @@
 (spaceline-spacemacs-theme)
 (spaceline-helm-mode)
 (spaceline-info-mode)
+(spaceline-toggle-org-clock-off)
+(spaceline-toggle-version-control-off)
+(spaceline-toggle-global-off)
+
 (require 'spaceline-all-the-icons)
 (spaceline-all-the-icons-theme)
+(spaceline-all-the-icons--setup-anzu)
 (setq spaceline-all-the-icons-separator-type 'none)
 (setq spaceline-all-the-icons-primary-separator "")
+(setq spaceline-all-the-icons-secondary-separator "")
+(setq spaceline-all-the-icons-clock-always-visible nil)
+(setq spaceline-all-the-icons-flycheck-alternate t)
+(spaceline-toggle-version-control-off)
+(spaceline-toggle-all-the-icons-git-status-off)
+(spaceline-toggle-all-the-icons-vc-icon-off)
+(spaceline-toggle-all-the-icons-vc-status-off)
+(setq spaceline-all-the-icons-hide-long-buffer-path t)
 
 ;; Prepare fonts
 ;; Output of emacs `describe-font`:
