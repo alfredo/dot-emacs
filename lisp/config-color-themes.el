@@ -11,10 +11,10 @@
 (spaceline-spacemacs-theme)
 (spaceline-helm-mode)
 (spaceline-info-mode)
-
 (require 'spaceline-all-the-icons)
 (spaceline-all-the-icons-theme)
-(spaceline-all-the-icons--setup-git-ahead)
+(setq spaceline-all-the-icons-separator-type 'none)
+(setq spaceline-all-the-icons-primary-separator "")
 
 ;; Prepare fonts
 ;; Output of emacs `describe-font`:
