@@ -14,6 +14,9 @@
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
 
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+
 ;; kill ring:
 (setq
  global-mark-ring-max 99
