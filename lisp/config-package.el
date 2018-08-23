@@ -36,7 +36,6 @@
     helm-swoop
     helm-ag
     volatile-highlights
-    undo-tree
     jedi-core
     company
     company-jedi

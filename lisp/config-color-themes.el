@@ -46,7 +46,6 @@
         yas-minor-mode
         helm-mode
         projectile-mode
-        undo-tree-mode
         flymake-mode
         ))
 (dolist (mode diminish-list) (diminish mode))

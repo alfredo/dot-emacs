@@ -107,11 +107,8 @@ Don't mess with special buffers."
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 
-(global-undo-tree-mode)
 ;; make ctrl-z undo
 (global-set-key (kbd "C-z") 'undo)
-;; make ctrl-Z redo
-(defalias 'redo 'undo-tree-redo)
 (global-set-key (kbd "C-S-z") 'redo)
 
 (add-hook 'after-init-hook 'global-company-mode)
@@ -147,8 +144,6 @@ Don't mess with special buffers."
 (setq scroll-step 1)
 
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
-
-(setq undo-tree-visualizer-timestamps t)
 
 (provide 'config-environment)
 
