@@ -64,6 +64,7 @@
     yapfify
     diff-hl
     anzu
+    deadgrep
     ))
 
 (add-to-list 'package-archives
