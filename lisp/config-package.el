@@ -46,6 +46,7 @@
     evil
     cider
     flycheck
+    flycheck-inline
     json-mode
     rust-mode
     browse-at-remote
@@ -64,6 +65,9 @@
     diff-hl
     anzu
     deadgrep
+    god-mode
+    evil
+    string-inflection
     ))
 
 (add-to-list 'package-archives

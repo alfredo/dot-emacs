@@ -145,6 +145,36 @@ Don't mess with special buffers."
 
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 
-(provide 'config-environment)
-
 (global-anzu-mode +1)
+
+
+(require 'god-mode)
+(global-set-key (kbd "<escape>") 'god-mode-all)
+(setq god-exempt-major-modes nil)
+(setq god-exempt-predicates nil)
+
+
+(require 'string-inflection)
+
+;; C-q C-u is the key bindings similar to Vz Editor.
+(global-unset-key (kbd "C-q"))
+(global-set-key (kbd "C-q") 'my-string-inflection-cycle-auto)
+
+(defun my-string-inflection-cycle-auto ()
+  "switching by major-mode"
+  (interactive)
+  (cond
+   ;; for emacs-lisp-mode
+   ((eq major-mode 'emacs-lisp-mode)
+    (string-inflection-all-cycle))
+   ;; for python
+   ((eq major-mode 'python-mode)
+    (string-inflection-python-style-cycle))
+   ;; for java
+   ((eq major-mode 'java-mode)
+    (string-inflection-java-style-cycle))
+   (t
+    ;; default
+    (string-inflection-ruby-style-cycle))))
+
+(provide 'config-environment)
