@@ -69,4 +69,8 @@ there's a region, all lines that region covers will be duplicated."
 
 (global-set-key (kbd "C-x k") 'kill-default-buffer)
 
+
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+
 (provide 'config-key-bindings)
