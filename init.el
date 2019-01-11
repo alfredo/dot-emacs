@@ -21,7 +21,7 @@
 ;; python mode
 (load-library "config-python")
 ;; python mode
-(load-library "config-maggit")
+(load-library "config-magit")
 ;; javascript setup
 (load-library "config-javascript")
 ;; eshell

@@ -4,4 +4,4 @@
 
 (define-key global-map (kbd "C--") 'magit-status)
 
-(provide 'config-maggit)
+(provide 'config-magit)

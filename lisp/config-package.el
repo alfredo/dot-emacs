@@ -8,66 +8,64 @@
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 
 (setq package-list '(
-   use-package
-    sml-mode
-    exec-path-from-shell
-    yasnippet
-    iy-go-to-char
-    flymake-cursor
-    flymake-python-pyflakes
-    s
-    magit
-    mic-paren
-    rainbow-mode
-    expand-region
-    browse-kill-ring
-    fic-mode
-    json-reformat
-    dash
-    dash-functional
+    all-the-icons
+    anzu
     arduino-mode
-    git-timemachine
-    rainbow-delimiters
-    dockerfile-mode
-    projectile
-    ggtags
-    helm
-    helm-projectile
-    helm-swoop
-    helm-ag
-    volatile-highlights
-    jedi-core
+    browse-at-remote
+    browse-kill-ring
+    cider
+    color-theme-sanityinc-tomorrow
     company
     company-jedi
-    ibuffer-vc
+    dash
+    dash-functional
+    deadgrep
+    diff-hl
     diminish
-    yaml-mode
+    dockerfile-mode
     elixir-mode
     evil
-    cider
+    exec-path-from-shell
+    expand-region
+    fic-mode
+    flx
     flycheck
+    flycheck-haskell
     flycheck-inline
-    json-mode
-    rust-mode
-    browse-at-remote
-    suggest
+    forge
+    ggtags
+    god-mode
+    grizzl
+    haskell-mode
+    helm
+    helm-ag
+    helm-flx
+    helm-projectile
+    helm-swoop
+    ibuffer-vc
     iedit
+    iy-go-to-char
+    jedi-core
+    json-mode
+    magit
+    mic-paren
+    projectile
+    rainbow-delimiters
+    rainbow-mode
+    rust-mode
+    s
+    sml-mode
     spaceline
     spaceline-all-the-icons
-    virtualenvwrapper
-    color-theme-sanityinc-tomorrow
-    all-the-icons
-    super-save
-    grizzl
-    flx
-    helm-flx
-    yapfify
-    diff-hl
-    anzu
-    deadgrep
-    god-mode
-    evil
     string-inflection
+    suggest
+    super-save
+    virtualenvwrapper
+    volatile-highlights
+    yaml-mode
+    yapfify
+    yasnippet
+    use-package
     ))
 
 (add-to-list 'package-archives
