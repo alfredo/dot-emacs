@@ -1,4 +1,4 @@
-;;; package --- defaults
+;;; package --- config-python
 ;;; Commentary:
 ;;; Code:
 

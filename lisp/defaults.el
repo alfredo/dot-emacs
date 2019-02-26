@@ -2,42 +2,34 @@
 ;;; Commentary:
 ;;; Code:
 
-;;  toolbars removal.
-(tool-bar-mode -1)
-(menu-bar-mode 0)
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 (setq fill-column 80)
-(column-number-mode 1)
-(global-font-lock-mode 1)
+(setq column-number-mode t)
+(setq global-font-lock-mode t)
 
 ; never use tabs.
 (setq-default indent-tabs-mode nil)
 (setq-default show-trailing-whitespace t)
 
-(setq make-backup-files nil) ; stop creating backup~ files
-(setq auto-save-default nil) ; stop creating #autosave# files
+; No backup~ files:
+(setq make-backup-files nil)
+; No #autosave# files
+(setq auto-save-default nil)
 
-;; kill ring:
-(setq
- global-mark-ring-max 99
- mark-ring-max 99
- ; if NIL, kill whole line and move the next line up
- kill-whole-line t
- mode-require-final-newline t
- )
+(setq global-mark-ring-max 999)
+(setq mark-ring-max 999)
+(setq kill-whole-line t)
+(setq mode-require-final-newline t)
 
-;; no ring bell.
 (setq ring-bell-function 'ignore)
 
 ;; desktop mode
 (desktop-save-mode 1)
 (setq desktop-buffers-not-to-save
         (concat "\\("
-                "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS\\|.DS_Store"
-                "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb";
-                "\\)$"))
+                "\\.log\\|(ftp)\\|^tags\\|^TAGS\\|.DS_Store\\|\\.emacs.*\\)$"))
 (add-to-list 'desktop-modes-not-to-save 'dired-mode)
 (add-to-list 'desktop-modes-not-to-save 'Info-mode)
 (add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
@@ -45,33 +37,34 @@
 
 ;; save a bunch of variables to the desktop file
 ;; for lists specify the len of the maximal saved data also
+(setq desktop-save-mode t)
+
 (setq desktop-globals-to-save
-      (append '((extended-command-history . 50)
-                (file-name-history        . 200)
+      (append '((extended-command-history . 100)
+                (file-name-history        . 900)
                 (grep-history             . 100)
                 (compile-history          . 100)
-                (minibuffer-history       . 50)
-                (query-replace-history    . 60)
-                (read-expression-history  . 60)
-                (regexp-history           . 60)
-                (regexp-search-ring       . 20)
-                (search-ring              . 20)
-                (shell-command-history    . 50)
+                (minibuffer-history       . 100)
+                (query-replace-history    . 100)
+                (read-expression-history  . 100)
+                (regexp-history           . 100)
+                (regexp-search-ring       . 100)
+                (search-ring              . 100)
+                (shell-command-history    . 100)
                 tags-file-name
                 register-alist)))
 
 
 ;; mark current line.
-(global-hl-line-mode 1)
+(setq global-hl-line-mode t)
 
 ;; scroll configuration.
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse 't)
-(setq scroll-step 1)
 
 ;; Overwrite any selected region with new text
-(delete-selection-mode 1)
+(setq delete-selection-mode t)
 (setq word-wrap t)
 
 ;; favour utf-8 encoding:

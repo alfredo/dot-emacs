@@ -1,8 +1,7 @@
-;;; package --- defaults
+;;; package --- config-projectile
 ;;; Commentary:
 ;;; Code:
 
-;; Custom configuration of projectile
 (setq projectile-indexing-method 'alien)
 (setq projectile-remember-window-configs t)
 (setq projectile-enable-caching t)
@@ -25,9 +24,6 @@
         ))
 (setq projectile-globally-ignored-directories
       '(
-        ".idea"
-        ".ensime_cache"
-        ".eunit"
         ".git"
         ".hg"
         ".fslckout"
@@ -44,4 +40,5 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (projectile-global-mode)
 (helm-projectile-on)
+
 (provide 'config-projectile)
