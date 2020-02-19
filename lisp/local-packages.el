@@ -45,10 +45,12 @@
     spaceline-all-the-icons
     string-inflection
     super-save
+    terraform-mode
     virtualenvwrapper
     yapfify
     yasnippet
     use-package
+    python-black
     ))
 
 (package-initialize)

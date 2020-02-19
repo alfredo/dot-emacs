@@ -12,6 +12,7 @@
 (load-library "config-projectile")
 (load-library "config-helm")
 (load-library "config-python")
+(load-library "config-org")
 (load-library "config-environment")
 (load-library "config-color-themes")
 

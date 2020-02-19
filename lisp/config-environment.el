@@ -8,6 +8,8 @@
 (setq super-save-auto-save-when-idle t)
 (setq auto-save-default nil)
 
+(delete-selection-mode 1)
+
 ;; Unique filenames for duplicate named buffers.
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
