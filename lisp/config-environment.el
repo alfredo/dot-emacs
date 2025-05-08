@@ -72,4 +72,27 @@
   (concat user-emacs-directory (convert-standard-filename "snippets"))))
 (yas-global-mode 1)
 
+(use-package vterm
+  :ensure t
+  :config
+  ;; Set shell
+  (setq vterm-shell "/bin/zsh"))
+
+;; Optional: create a key binding to open vterm
+(global-set-key (kbd "C-c t") 'vterm)(use-package vterm
+  :ensure t
+  :config
+  ;; Set shell
+  (setq vterm-shell "/bin/zsh"))
+
+;; Disable whitespace-mode in vterm
+(defun my-vterm-hook ()
+  "Disable whitespace mode in vterm buffers"
+  (whitespace-mode -1))
+
+(add-hook 'vterm-mode-hook 'my-vterm-hook)
+
+;; Optional: create a key binding to open vterm
+(global-set-key (kbd "C-c t") 'vterm)
+
 (provide 'config-environment)

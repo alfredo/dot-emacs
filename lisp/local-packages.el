@@ -42,6 +42,7 @@
     which-key
     helpful
     org-roam
+    vterm
     ))
 
 ;; Install use-package if not installed
