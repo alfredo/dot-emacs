@@ -75,22 +75,20 @@
 (use-package vterm
   :ensure t
   :config
-  ;; Set shell
-  (setq vterm-shell "/bin/zsh"))
-
-;; Optional: create a key binding to open vterm
-(global-set-key (kbd "C-c t") 'vterm)(use-package vterm
-  :ensure t
-  :config
-  ;; Set shell
-  (setq vterm-shell "/bin/zsh"))
+  (setq vterm-shell "/bin/zsh")
+  ;; Disable whitespace-mode in vterm buffers
+  (add-hook 'vterm-mode-hook (lambda () (whitespace-mode 0)))
+  ;; Create a key binding to open vterm
+  (global-set-key (kbd "C-c t") 'vterm))
 
 ;; Disable whitespace-mode in vterm
 (defun my-vterm-hook ()
   "Disable whitespace mode in vterm buffers"
   (whitespace-mode -1))
 
-(add-hook 'vterm-mode-hook 'my-vterm-hook)
+(add-hook 'vterm-mode-hook (lambda ()
+                             (setq-local show-trailing-whitespace nil)
+                             (whitespace-mode -1)))
 
 ;; Optional: create a key binding to open vterm
 (global-set-key (kbd "C-c t") 'vterm)
