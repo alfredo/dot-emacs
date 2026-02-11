@@ -159,7 +159,7 @@
 ;; Useful search and navigation commands
 (use-package consult
   :ensure t
-  :bind (("C-s" . consult-line)
+  :bind (("C-l" . consult-line)
          ("C-x b" . consult-buffer)
          ("M-y" . consult-yank-pop)
          ("M-g g" . consult-goto-line)

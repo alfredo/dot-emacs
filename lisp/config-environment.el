@@ -93,4 +93,60 @@
 ;; Optional: create a key binding to open vterm
 (global-set-key (kbd "C-c t") 'vterm)
 
+(add-hook 'org-mode-hook #'visual-line-mode)
+
+;; Magit configuration
+(use-package magit
+  :ensure t
+  :config
+  ;; Always visit the working tree file instead of blobs when pressing RET
+  (setq magit-diff-visit-file-other-window t)
+  (setq magit-visit-ref-behavior '(checkout-any focus-on-ref))
+  ;; Disable visiting previous blob - always visit current worktree
+  (setq magit-diff-visit-previous-blob nil)
+
+  ;; Create a wrapper function to always visit worktree files
+  (defun my-magit-visit-file ()
+    "Visit the file at point in the working tree for editing."
+    (interactive)
+    (let ((file (magit-file-at-point)))
+      (if file
+          (find-file-other-window file)
+        (magit-diff-visit-file))))
+
+  ;; Bind RET to our custom function
+  (with-eval-after-load 'magit-diff
+    (define-key magit-file-section-map (kbd "RET") 'my-magit-visit-file)
+    (define-key magit-hunk-section-map (kbd "RET") 'my-magit-visit-file))
+  (with-eval-after-load 'magit-status
+    (define-key magit-status-mode-map (kbd "RET") 'my-magit-visit-file)))
+
+;; YAML mode configuration
+(use-package yaml-mode
+  :ensure t
+  :mode (("\\.yml\\'" . yaml-mode)
+         ("\\.yaml\\'" . yaml-mode))
+  :config
+  (add-hook 'yaml-mode-hook
+            (lambda ()
+              (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
+
+;; Go mode configuration
+(use-package go-mode
+  :ensure t
+  :mode "\\.go\\'"
+  :config
+  (add-hook 'go-mode-hook
+            (lambda ()
+              ;; Set tab width to 4 as configured
+              (setq tab-width 4)
+              ;; Go uses tabs, not spaces
+              (setq indent-tabs-mode t)
+              ;; Enable eglot for LSP support
+              (eglot-ensure)
+              ;; Format on save
+              (add-hook 'before-save-hook 'eglot-format-buffer nil t))))
+
 (provide 'config-environment)
+
+

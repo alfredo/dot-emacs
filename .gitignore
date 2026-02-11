@@ -24,3 +24,10 @@ session.*
 .emacs.desktop.lock
 .python-environments/
 custom.el
+.emacs.d
+.org-id-locations
+bookmarks
+history
+projects
+transient/
+forge-database.sqlite

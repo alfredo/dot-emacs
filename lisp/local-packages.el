@@ -43,6 +43,8 @@
     helpful
     org-roam
     vterm
+    yaml-mode
+    go-mode
     ))
 
 ;; Install use-package if not installed
